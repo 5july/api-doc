@@ -771,3 +771,176 @@ option | all = fetch everything
 # OpenVPN
 
 # Wireguard
+
+## wireguard
+Create an wireguard pubkey
+> To add key, use this code:
+
+```javascript
+var request = require('request');
+
+request.post(
+    'https://api2.integrity.st/1.0/Wireguard',
+        { headers: { "API-KEY": "356a192b7913b04c54574d18c28d46e6395428ab",
+        "Content-Type": "application/json"},
+     json: { username: 'test', password: 'testing123', pubkey: "qPTi/SUqY36cEimdbRraqp4PJcrLIPiKtovaEUPPEFY=" } },
+    function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            console.log(body)
+        } else  { console.log(body); }
+    }   
+);
+
+```
+
+```ruby
+require 'net/http'
+require 'json'
+
+uri = URI('https://api2.integrity.st/1.0/Wireguard')
+http = Net::HTTP.new(uri.host, uri.port)
+http.use_ssl = true
+req = Net::HTTP::Post.new(uri.path, 'Content-Type' => 'application/json')
+req['API-KEY'] = '356a192b7913b04c54574d18c28d46e6395428ab'
+req.body = {username: 'test', password: 'testing123', pubkey: 'qPTi/SUqY36cEimdbRraqp4PJcrLIPiKtovaEUPPEFY='}.to_json
+res = http.request(req)
+puts "#{res.body}"
+
+```
+
+```python
+import requests
+
+headers = {'user-agent': 'python script',
+        'Content-type': 'application/json',
+        'accept': 'application/json',
+        'API-KEY': '356a192b7913b04c54574d18c28d46e6395428ab'}
+payload = { 'username': 'demodemo', 'password': 'abc1234', 'pubkey': 'qPTi/SUqY36cEimdbRraqp4PJcrLIPiKtovaEUPPEFY='}
+req = requests.get("https://api2.integrity.st/1.0/Wireguard", headers=headers, json=payload)
+print(req.json())
+```
+
+```shell
+# With shell, you can just pass the correct header with each request
+curl "https://api2.integrity.st/1.0/Wireguard" \
+  -X POST \
+  -H "API-KEY: 356a192b7913b04c54574d18c28d46e6395428ab" \
+  -H "Content-Type: application/json" \
+  -H "accept: application/json" \
+  -d '{"username": "demodemo", "password": "abc1234", "pubkey": "qPTi/SUqY36cEimdbRraqp4PJcrLIPiKtovaEUPPEFY="}'
+```
+
+```php
+<?php
+$data_string = json_encode(array("username" => "test", "password" => "testing123", "pubkey" => "qPTi/SUqY36cEimdbRraqp4PJcrLIPiKtovaEUPPEFY="));
+
+$result = file_get_contents('https://api2.integrity.st/1.0/Wireguard', null, stream_context_create(array(
+'http' => array(
+        'method' => 'POST',
+        'ignore_errors' => TRUE,
+        'header' =>
+        'API-KEY: 356a192b7913b04c54574d18c28d46e6395428ab' . "\r\n"
+        .'Content-Type: application/json' . "\r\n"
+        .'Content-Length: ' . strlen($data_string) . "\r\n",
+        'content' => $data_string,
+),
+)));
+print_r(json_decode($result))
+?>
+```
+
+> The above command returns JSON structured like this:
+
+```json
+  {
+    "success": ok, 
+    "user_id": 2
+  }   
+```
+
+### HTTP Request
+
+`POST https://api2.integrity.st/1.0/Wireguard`
+
+
+
+
+#IP Check
+
+##ipcheck
+
+```javascript
+var request = require('request');
+
+request.get(
+    'https://api2.integrity.st/1.0/Ipcheck',
+        { headers: { "API-KEY": "356a192b7913b04c54574d18c28d46e6395428ab",
+        "Accept": "application/json"},
+      },  
+    function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            console.log(body)
+        } else  { console.log(body); }
+    }   
+);
+
+```
+
+```ruby
+require 'net/http'
+
+uri = URI('https://api2.integrity.st/1.0/Ipcheck')
+http = Net::HTTP.new(uri.host, uri.port)
+http.use_ssl = true
+req = Net::HTTP::Get.new(uri.path, 'Accept' => 'application/json')
+req['API-KEY'] = '356a192b7913b04c54574d18c28d46e6395428ab'
+res = http.request(req)
+puts "#{res.body}"
+
+```
+
+```python
+import requests
+
+headers = {'user-agent': 'python script',
+        'accept': 'application/json',
+        'API-KEY': '356a192b7913b04c54574d18c28d46e6395428ab'}
+req = requests.get("https://api2.integrity.st/1.0/Ipcheck", headers=headers)
+print(req.json())
+```
+
+```shell
+curl "https://api2.integrity.st/1.0/Ipcheck" \
+  -H "API-KEY: 356a192b7913b04c54574d18c28d46e6395428ab" \
+  -H  "accept: application/json"
+```
+
+```php
+<?php
+$result = file_get_contents('https://api2.integrity.st/1.0/Ipcheck', null, stream_context_create(array(
+'http' => array(
+        'method' => 'GET',
+        'ignore_errors' => TRUE,
+        'header' =>
+        'API-KEY: 356a192b7913b04c54574d18c28d46e6395428ab' . "\r\n"
+        .'Accept: application/json' . "\r\n"
+),
+)));
+
+print_r(json_decode($result))
+
+?>
+```
+
+
+> The above command returns JSON structured like this:
+
+```json
+{"ip": "127.0.0.1", "connected": false}
+
+```
+
+### HTTP Request
+
+`GET https://api2.integrity.st/1.0/Ipcheck`
+
