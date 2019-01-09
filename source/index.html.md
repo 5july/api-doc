@@ -3,10 +3,10 @@ title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell: cURL
-  - python
-  - ruby
-  - javascript: nodejs
-  - php
+  - python: Python
+  - ruby: Ruby
+  - javascript: Nodejs
+  - php: PHP
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
@@ -22,11 +22,20 @@ search: true
 
 Welcome to the Integrity.st API! You can use our API to access VPN API endpoints, which can get information on various VPN accounts and create and delete information from our database
 
-We have language bindings in Shell, Ruby, Python, and PHP! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+We have language bindings in Shell, Python, Ruby, Nodejs, and PHP! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
-This example API documentation page was created with [Slate](https://github.com/lord/slate). Feel free to edit it and use it as a base for your own API's documentation.
+# Authentication & Headers
+With each API call, you will need to setup http request headers to authenticate.
 
-# Authentication
+### HTTP HEADERS
+
+Parameter | Description | Required
+--------- | ----------- | -----------
+API-KEY | Enter your api key, 64 bit string | yes
+Content-Type | `application/json` | no
+Accept | `application/json` | no
+
+note that a few commands such as ipcheck, locations do not require API-KEY.
 
 ## Auth
 Test user authentication
@@ -36,8 +45,8 @@ Test user authentication
 var request = require('request');
 
 request.post(
-    'https://api2.integrity.st/1.0/Auth',
-	{ headers: { "API-KEY": "356a192b7913b04c54574d18c28d46e6395428ab",
+    'https://api2.integrity.st/1.0/auth',
+	{ headers: { "API-KEY": "ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj",
 	"Content-Type": "application/json"},
      json: { username: 'test', password: 'testing123' } },
     function (error, response, body) {
@@ -53,11 +62,11 @@ request.post(
 require 'net/http'
 require 'json'
 
-uri = URI('https://api2.integrity.st/1.0/Auth')
+uri = URI('https://api2.integrity.st/1.0/auth')
 http = Net::HTTP.new(uri.host, uri.port)
 http.use_ssl = true
 req = Net::HTTP::Post.new(uri.path, 'Content-Type' => 'application/json')
-req['API-KEY'] = '356a192b7913b04c54574d18c28d46e6395428ab'
+req['API-KEY'] = 'ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'
 req.body = {username: 'test', password: 'testing123'}.to_json
 res = http.request(req)
 puts "#{res.body}"
@@ -69,33 +78,31 @@ import requests
 
 headers = {'user-agent': 'python script',
         'Content-type': 'application/json',
-	'accept': 'application/json',
-        'API-KEY': '356a192b7913b04c54574d18c28d46e6395428ab'}
-payload = { 'username': 'demodemo', 'password': 'abc1234'}
-req = requests.get("https://api2.integrity.st/1.0/Auth", headers=headers, json=payload)
+        'API-KEY': 'ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'}
+payload = { 'username': 'test', 'password': 'testing123'}
+req = requests.post("https://api2.integrity.st/1.0/auth", headers=headers, json=payload)
 print(req.json())
 ```
 
 ```shell
 # With shell, you can just pass the correct header with each request
-curl "https://api2.integrity.st/1.0/Auth" \
+curl "https://api2.integrity.st/1.0/auth" \
   -X POST \
-  -H "API-KEY: 356a192b7913b04c54574d18c28d46e6395428ab" \
+  -H "API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj" \
   -H "Content-Type: application/json" \
-  -H "accept: application/json" \
-  -d '{"username": "demodemo", "password": "abc1234"}'
+  -d '{"username": "test", "password": "testing123"}'
 ```
 
 ```php
 <?php
 $data_string = json_encode(array("username" => "test", "password" => "testing123"));
 
-$result = file_get_contents('https://api2.integrity.st/1.0/Auth', null, stream_context_create(array(
+$result = file_get_contents('https://api2.integrity.st/1.0/auth', null, stream_context_create(array(
 'http' => array(
         'method' => 'POST',
         'ignore_errors' => TRUE,
         'header' =>  
-        'API-KEY: 356a192b7913b04c54574d18c28d46e6395428ab' . "\r\n"
+        'API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj' . "\r\n"
         .'Content-Type: application/json' . "\r\n"
         .'Content-Length: ' . strlen($data_string) . "\r\n",
         'content' => $data_string,
@@ -108,15 +115,18 @@ print_r(json_decode($result))
 > The above command returns JSON structured like this:
 
 ```json
-  {
-    "success": ok,
-    "user_id": 2
-  } 
+{
+  "username": "test", 
+  "success": "ok", 
+  "reseller_id": 1, 
+  "created_at": "Wed, 05 Dec 2018 10:31:41 GMT", 
+  "enable": true
+}
 ```
 
 ### HTTP Request
 
-`POST https://api2.integrity.st/1.0/Auth`
+`POST https://api2.integrity.st/1.0/auth`
 
 ### JSON Parameters
 
@@ -127,7 +137,7 @@ password | enter user password to authenticate with | yes
 
 
 <aside class="notice">
-You must replace <code>356a192b7913b04c54574d18c28d46e6395428ab</code> with your personal API key.
+You must replace <code>ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj</code> with your personal API key.
 </aside>
 
 # User
@@ -137,8 +147,8 @@ You must replace <code>356a192b7913b04c54574d18c28d46e6395428ab</code> with your
 var request = require('request');
 
 request.get(
-    'https://api2.integrity.st/1.0/User',
-        { headers: { "API-KEY": "356a192b7913b04c54574d18c28d46e6395428ab",
+    'https://api2.integrity.st/1.0/user',
+        { headers: { "API-KEY": "ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj",
         "Accept": "application/json"},
       },  
     function (error, response, body) {
@@ -153,11 +163,11 @@ request.get(
 ```ruby
 require 'net/http'
 
-uri = URI('https://api2.integrity.st/1.0/User')
+uri = URI('https://api2.integrity.st/1.0/user')
 http = Net::HTTP.new(uri.host, uri.port)
 http.use_ssl = true
 req = Net::HTTP::Get.new(uri.path, 'Accept' => 'application/json')
-req['API-KEY'] = '356a192b7913b04c54574d18c28d46e6395428ab'
+req['API-KEY'] = 'ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'
 res = http.request(req)
 puts "#{res.body}"
 
@@ -168,25 +178,25 @@ import requests
 
 headers = {'user-agent': 'python script',
         'accept': 'application/json',
-        'API-KEY': '356a192b7913b04c54574d18c28d46e6395428ab'}
-req = requests.get("https://api2.integrity.st/1.0/User", headers=headers)
+        'API-KEY': 'ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'}
+req = requests.get("https://api2.integrity.st/1.0/user", headers=headers)
 print(req.json())
 ```
 
 ```shell
-curl "https://api2.integrity.st/1.0/User" \
-  -H "API-KEY: 356a192b7913b04c54574d18c28d46e6395428ab" \
+curl "https://api2.integrity.st/1.0/user" \
+  -H "API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj" \
   -H  "accept: application/json" 
 ```
 
 ```php
 <?php
-$result = file_get_contents('https://api2.integrity.st/1.0/User', null, stream_context_create(array(
+$result = file_get_contents('https://api2.integrity.st/1.0/user', null, stream_context_create(array(
 'http' => array(
         'method' => 'GET',
         'ignore_errors' => TRUE,
         'header' =>  
-        'API-KEY: 356a192b7913b04c54574d18c28d46e6395428ab' . "\r\n"
+        'API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj' . "\r\n"
         .'Accept: application/json' . "\r\n"
 ),
 )));
@@ -237,7 +247,7 @@ This endpoint retrieves all users.
 
 ### HTTP Request
 
-`GET https://api2.integrity.st/1.0/User`
+`GET https://api2.integrity.st/1.0/user`
 
 ### URL Parameters
 
@@ -251,7 +261,7 @@ search | enter a string to search for username | no
 
 <aside class="notice">
 Example URL request with multiple parameters:<br>
-https://api2.integrity.st/1.0/User?sort=userid&order=desc&page=1&search=user
+https://api2.integrity.st/1.0/user?sort=userid&order=desc&page=1&search=abc123
 </aside>
 
 
@@ -261,8 +271,8 @@ https://api2.integrity.st/1.0/User?sort=userid&order=desc&page=1&search=user
 var request = require('request');
 
 request.get(
-    'https://api2.integrity.st/1.0/User/25',
-        { headers: { "API-KEY": "356a192b7913b04c54574d18c28d46e6395428ab",
+    'https://api2.integrity.st/1.0/user/25',
+        { headers: { "API-KEY": "ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj",
         "Accept": "application/json"},
       },  
     function (error, response, body) {
@@ -277,11 +287,11 @@ request.get(
 ```ruby
 require 'net/http'
 
-uri = URI('https://api2.integrity.st/1.0/User/25')
+uri = URI('https://api2.integrity.st/1.0/user/25')
 http = Net::HTTP.new(uri.host, uri.port)
 http.use_ssl = true
 req = Net::HTTP::Get.new(uri.path, 'Accept' => 'application/json')
-req['API-KEY'] = '356a192b7913b04c54574d18c28d46e6395428ab'
+req['API-KEY'] = 'ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'
 res = http.request(req)
 puts "#{res.body}"
 
@@ -292,27 +302,27 @@ import requests
 
 headers = {'user-agent': 'python script',
         'accept': 'application/json',
-        'API-KEY': '356a192b7913b04c54574d18c28d46e6395428ab'}
-req = requests.get("https://api2.integrity.st/1.0/User/25", headers=headers)
+        'API-KEY': 'ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'}
+req = requests.get("https://api2.integrity.st/1.0/user/25", headers=headers)
 print(req.json())
 
 
 ```
 
 ```shell
-curl "https://api2.integrity.st/1.0/User/25" \
--H "API-KEY: 356a192b7913b04c54574d18c28d46e6395428ab" \
+curl "https://api2.integrity.st/1.0/user/25" \
+-H "API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj" \
 -H  "accept: application/json"
 ```
 
 ```php
 <?php
-$result = file_get_contents('https://api2.integrity.st/1.0/User/25', null, stream_context_create(array(
+$result = file_get_contents('https://api2.integrity.st/1.0/user/25', null, stream_context_create(array(
 'http' => array(
         'method' => 'GET',
         'ignore_errors' => TRUE,
         'header' =>  
-        'API-KEY: 356a192b7913b04c54574d18c28d46e6395428ab' . "\r\n"
+        'API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj' . "\r\n"
         .'Accept: application/json' . "\r\n"
 ),
 )));
@@ -336,11 +346,10 @@ $result = file_get_contents('https://api2.integrity.st/1.0/User/25', null, strea
 
 This endpoint retrieves a specific user.
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
 
 ### HTTP Request
 
-`GET https://api2.integrity.st/User/<ID>`
+`GET https://api2.integrity.st/user/<ID>`
 
 ### URL Parameters
 
@@ -354,8 +363,8 @@ ID | The ID of the user to retrieve
 var request = require('request');
 
 request.post(
-    'https://api2.integrity.st/1.0/User',
-        { headers: { "API-KEY": "356a192b7913b04c54574d18c28d46e6395428ab",
+    'https://api2.integrity.st/1.0/user',
+        { headers: { "API-KEY": "ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj",
         "Content-Type": "application/json"},
      json: { password: 'testing123' } },
     function (error, response, body) {
@@ -371,11 +380,11 @@ request.post(
 require 'net/http'
 require 'json'
 
-uri = URI('https://api2.integrity.st/1.0/User')
+uri = URI('https://api2.integrity.st/1.0/user')
 http = Net::HTTP.new(uri.host, uri.port)
 http.use_ssl = true
 req = Net::HTTP::Post.new(uri.path, 'Content-Type' => 'application/json')
-req['API-KEY'] = '356a192b7913b04c54574d18c28d46e6395428ab'
+req['API-KEY'] = 'ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'
 req.body = {password: 'testing123'}.to_json
 res = http.request(req)
 puts "#{res.body}"
@@ -386,18 +395,16 @@ puts "#{res.body}"
 import requests
 
 headers = {'user-agent': 'python script',
-        'accept': 'application/json',
         'Content-type': 'application/json',
-        'API-KEY': '356a192b7913b04c54574d18c28d46e6395428ab'}
+        'API-KEY': 'ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'}
 payload = {'password' : 'abc1234'}
-req = requests.post("https://api2.integrity.st/1.0/User", headers=headers, json=payload)
+req = requests.post("https://api2.integrity.st/1.0/user", headers=headers, json=payload)
 ```
 
 ```shell
-curl "https://api2.integrity.st/1.0/User" \
+curl "https://api2.integrity.st/1.0/user" \
   -X POST \
-  -H "API-KEY: 356a192b7913b04c54574d18c28d46e6395428ab" \
-  -H  "accept: application/json" \
+  -H "API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj" \
   -H  "Content-type: application/json" \
   -d '{"password": "abc1234"}'
 ```
@@ -406,12 +413,12 @@ curl "https://api2.integrity.st/1.0/User" \
 <?php
 $data_string = json_encode(array("password" => "abc1234"));
 
-$result = file_get_contents('https://api2.integrity.st/1.0/User', null, stream_context_create(array(
+$result = file_get_contents('https://api2.integrity.st/1.0/user', null, stream_context_create(array(
 	'http' => array(
 	'method' => 'POST',
 	'ignore_errors' => TRUE,
 	'header' =>  
-	'API-KEY: 356a192b7913b04c54574d18c28d46e6395428ab' . "\r\n"
+	'API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj' . "\r\n"
 	.'Content-Type: application/json' . "\r\n"
 	.'Content-Length: ' . strlen($data_string) . "\r\n",
 	'content' => $data_string,
@@ -439,7 +446,7 @@ This endpoint deletes a specific kitten.
 
 ### HTTP Request
 
-`DELETE https://api.integrity.st/1.0/User`
+`DELETE https://api.integrity.st/1.0/user`
 
 ### json Parameters
 
@@ -458,8 +465,8 @@ an empty json payload will autogenerate a password for you.
 var request = require('request');
 
 request.put(
-    'https://api2.integrity.st/1.0/User/40',
-        { headers: { "API-KEY": "356a192b7913b04c54574d18c28d46e6395428ab",
+    'https://api2.integrity.st/1.0/user/40',
+        { headers: { "API-KEY": "ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj",
         "Content-Type": "application/json"},
      json: { username: "roxyroxy14", password: 'testing123', enable: 0 } },
     function (error, response, body) {
@@ -474,11 +481,11 @@ request.put(
 require 'net/http'
 require 'json'
 
-uri = URI('https://api2.integrity.st/1.0/User/23')
+uri = URI('https://api2.integrity.st/1.0/user/23')
 http = Net::HTTP.new(uri.host, uri.port)
 http.use_ssl = true
 req = Net::HTTP::Put.new(uri.path, 'Content-Type' => 'application/json')
-req['API-KEY'] = '356a192b7913b04c54574d18c28d46e6395428ab'
+req['API-KEY'] = 'ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'
 req.body = {password: 'abc1234', username: 'Johnny2', enable: 1}.to_json
 res = http.request(req)
 puts "#{res.body}"
@@ -489,18 +496,16 @@ puts "#{res.body}"
 import requests
 
 headers = {'user-agent': 'python script',
-        'accept': 'application/json',
         'Content-type': 'application/json',
-        'API-KEY': '356a192b7913b04c54574d18c28d46e6395428ab'}
+        'API-KEY': 'ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'}
 payload = {'username': 'Johnny2', 'password' : 'abc1234', 'enable': 1}
-req = requests.put("https://api2.integrity.st/User/<userid>", headers=headers, json=payload)
+req = requests.put("https://api2.integrity.st/user/<userid>", headers=headers, json=payload)
 ```
 
 ```shell
-curl "https://api.integrity.st/1.0/User/<userid>" \
+curl "https://api.integrity.st/1.0/user/<userid>" \
   -X PUT \
-  -H "API-KEY: 356a192b7913b04c54574d18c28d46e6395428ab" \
-  -H  "accept: application/json" \
+  -H "API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj" \
   -H  "Content-Type: application/json" \
   -d '{"username": "roxyroxy", "password": "abc1234", enable: 1}'
 ```
@@ -509,12 +514,12 @@ curl "https://api.integrity.st/1.0/User/<userid>" \
 <?php
 $data_string = json_encode(array("password" => "123456789","username" => "roxyroxy12", "enable" => 0));
 
-$result = file_get_contents('https://api2.integrity.st/1.0/User/23', null, stream_context_create(array(
+$result = file_get_contents('https://api2.integrity.st/1.0/user/23', null, stream_context_create(array(
 'http' => array(
         'method' => 'PUT',
         'ignore_errors' => TRUE,
         'header' =>  
-        'API-KEY: 356a192b7913b04c54574d18c28d46e6395428ab' . "\r\n"
+        'API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj' . "\r\n"
         .'Content-Type: application/json' . "\r\n"
         .'Content-Length: ' . strlen($data_string) . "\r\n",
         'content' => $data_string,
@@ -538,7 +543,7 @@ This endpoint update a specific user.
 
 ### HTTP Request
 
-`PUT https://api.integrity.st/1.0/User/<userid>`
+`PUT https://api.integrity.st/1.0/user/<userid>`
 
 ### URL Parameters
 
@@ -564,9 +569,9 @@ enable | specifiy 1 to enable and 0 to disable the user
 var request = require('request');
 
 request(
-    'https://api2.integrity.st/1.0/User/40',
+    'https://api2.integrity.st/1.0/user/40',
         { method: 'delete',
-                headers: { "API-KEY": "356a192b7913b04c54574d18c28d46e6395428ab",
+                headers: { "API-KEY": "ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj",
         "Accept": "application/json"},
       },  
     function (error, response, body) {
@@ -580,11 +585,11 @@ request(
 ```ruby
 require 'net/http'
 
-uri = URI('https://api2.integrity.st/1.0/User/21')
+uri = URI('https://api2.integrity.st/1.0/user/21')
 http = Net::HTTP.new(uri.host, uri.port)
 http.use_ssl = true
 req = Net::HTTP::Delete.new(uri.path, 'Accept' => 'application/json')
-req['API-KEY'] = '356a192b7913b04c54574d18c28d46e6395428ab'
+req['API-KEY'] = 'ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'
 res = http.request(req)
 puts "#{res.body}"
 
@@ -595,27 +600,27 @@ import requests
 
 headers = {'user-agent': 'python script',
         'accept': 'application/json',
-        'API-KEY': '356a192b7913b04c54574d18c28d46e6395428ab'}
-req = requests.delete("http://127.0.0.1:5000/1.0/User/username", headers=headers)
+        'API-KEY': 'ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'}
+req = requests.delete("http://127.0.0.1:5000/1.0/user/username", headers=headers)
 print(req.json())
 
 ```
 
 ```shell
-curl "https://api.integrity.st/1.0/User/<userid>" \
+curl "https://api.integrity.st/1.0/user/<userid>" \
   -X DELETE \
-  -H "API-KEY: 356a192b7913b04c54574d18c28d46e6395428ab" \
+  -H "API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj" \
   -H  "accept: application/json" 
 ```
 
 ```php
 <?php
-$result = file_get_contents('https://api2.integrity.st/1.0/User/25', null, stream_context_create(array(
+$result = file_get_contents('https://api2.integrity.st/1.0/user/25', null, stream_context_create(array(
 'http' => array(
         'method' => 'DELETE',
         'ignore_errors' => TRUE,
         'header' =>
-        'API-KEY: 356a192b7913b04c54574d18c28d46e6395428ab' . "\r\n"
+        'API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj' . "\r\n"
         .'Accept: application/json' . "\r\n"
 ),
 )));
@@ -637,7 +642,7 @@ This endpoint deletes a specific user.
 
 ### HTTP Request
 
-`DELETE https://api.integrity.st/1.0/User/<userId>`
+`DELETE https://api.integrity.st/1.0/user/<userId>`
 
 ### URL Parameters
 
@@ -653,8 +658,8 @@ userid | The userid of the user to delete
 var request = require('request');
 
 request.get(
-    'https://api2.integrity.st/1.0/Stats/all',
-        { headers: { "API-KEY": "356a192b7913b04c54574d18c28d46e6395428ab",
+    'https://api2.integrity.st/1.0/stats/all',
+        { headers: { "API-KEY": "ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj",
         "Accept": "application/json"},
       },  
     function (error, response, body) {
@@ -669,11 +674,11 @@ request.get(
 ```ruby
 require 'net/http'
 
-uri = URI('https://api2.integrity.st/1.0/Stats/all')
+uri = URI('https://api2.integrity.st/1.0/stats/all')
 http = Net::HTTP.new(uri.host, uri.port)
 http.use_ssl = true
 req = Net::HTTP::Get.new(uri.path, 'Accept' => 'application/json')
-req['API-KEY'] = '356a192b7913b04c54574d18c28d46e6395428ab'
+req['API-KEY'] = 'ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'
 res = http.request(req)
 puts "#{res.body}"
 
@@ -684,25 +689,25 @@ import requests
 
 headers = {'user-agent': 'python script',
         'accept': 'application/json',
-        'API-KEY': '356a192b7913b04c54574d18c28d46e6395428ab'}
+        'API-KEY': 'ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'}
 req = requests.get("https://api2.integrity.st/1.0/Stats/all", headers=headers)
 print(req.json())
 ```
 
 ```shell
-curl "https://api2.integrity.st/1.0/Stats/all" \
-  -H "API-KEY: 356a192b7913b04c54574d18c28d46e6395428ab" \
+curl "https://api2.integrity.st/1.0/stats/all" \
+  -H "API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj" \
   -H  "accept: application/json"
 ```
 
 ```php
 <?php
-$result = file_get_contents('https://api2.integrity.st/1.0/Stats/all', null, stream_context_create(array(
+$result = file_get_contents('https://api2.integrity.st/1.0/stats/all', null, stream_context_create(array(
 'http' => array(
         'method' => 'GET',
         'ignore_errors' => TRUE,
         'header' =>  
-        'API-KEY: 356a192b7913b04c54574d18c28d46e6395428ab' . "\r\n"
+        'API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj' . "\r\n"
         .'Accept: application/json' . "\r\n"
 ),
 )));
@@ -760,7 +765,7 @@ This endpoint display stats for your API account
 
 ### HTTP Request
 
-`GET https://api2.integrity.st/1.0/Stats/<option>`
+`GET https://api2.integrity.st/1.0/stats/<option>`
 
 ### URL Parameters
 
@@ -772,16 +777,18 @@ option | all = fetch everything
 
 # Wireguard
 
-## wireguard
-Create an wireguard pubkey
+## Add key
+Push an wireguard public key to the server (This should be your public key).
+Basically you want to run this on the client side. either in a bashscript. you can see example here: https://wg.beta.5july.net/dl/integrity-wg.sh
+
 > To add key, use this code:
 
 ```javascript
 var request = require('request');
 
 request.post(
-    'https://api2.integrity.st/1.0/Wireguard',
-        { headers: { "API-KEY": "356a192b7913b04c54574d18c28d46e6395428ab",
+    'https://api2.integrity.st/1.0/wireguard',
+        { headers: { "API-KEY": "ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj",
         "Content-Type": "application/json"},
      json: { username: 'test', password: 'testing123', pubkey: "qPTi/SUqY36cEimdbRraqp4PJcrLIPiKtovaEUPPEFY=" } },
     function (error, response, body) {
@@ -797,11 +804,11 @@ request.post(
 require 'net/http'
 require 'json'
 
-uri = URI('https://api2.integrity.st/1.0/Wireguard')
+uri = URI('https://api2.integrity.st/1.0/wireguard')
 http = Net::HTTP.new(uri.host, uri.port)
 http.use_ssl = true
 req = Net::HTTP::Post.new(uri.path, 'Content-Type' => 'application/json')
-req['API-KEY'] = '356a192b7913b04c54574d18c28d46e6395428ab'
+req['API-KEY'] = 'ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'
 req.body = {username: 'test', password: 'testing123', pubkey: 'qPTi/SUqY36cEimdbRraqp4PJcrLIPiKtovaEUPPEFY='}.to_json
 res = http.request(req)
 puts "#{res.body}"
@@ -813,20 +820,18 @@ import requests
 
 headers = {'user-agent': 'python script',
         'Content-type': 'application/json',
-        'accept': 'application/json',
-        'API-KEY': '356a192b7913b04c54574d18c28d46e6395428ab'}
+        'API-KEY': 'ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'}
 payload = { 'username': 'demodemo', 'password': 'abc1234', 'pubkey': 'qPTi/SUqY36cEimdbRraqp4PJcrLIPiKtovaEUPPEFY='}
-req = requests.get("https://api2.integrity.st/1.0/Wireguard", headers=headers, json=payload)
+req = requests.post("https://api2.integrity.st/1.0/wireguard", headers=headers, json=payload)
 print(req.json())
 ```
 
 ```shell
 # With shell, you can just pass the correct header with each request
-curl "https://api2.integrity.st/1.0/Wireguard" \
+curl "https://api2.integrity.st/1.0/wireguard" \
   -X POST \
-  -H "API-KEY: 356a192b7913b04c54574d18c28d46e6395428ab" \
+  -H "API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj" \
   -H "Content-Type: application/json" \
-  -H "accept: application/json" \
   -d '{"username": "demodemo", "password": "abc1234", "pubkey": "qPTi/SUqY36cEimdbRraqp4PJcrLIPiKtovaEUPPEFY="}'
 ```
 
@@ -834,12 +839,12 @@ curl "https://api2.integrity.st/1.0/Wireguard" \
 <?php
 $data_string = json_encode(array("username" => "test", "password" => "testing123", "pubkey" => "qPTi/SUqY36cEimdbRraqp4PJcrLIPiKtovaEUPPEFY="));
 
-$result = file_get_contents('https://api2.integrity.st/1.0/Wireguard', null, stream_context_create(array(
+$result = file_get_contents('https://api2.integrity.st/1.0/wireguard', null, stream_context_create(array(
 'http' => array(
         'method' => 'POST',
         'ignore_errors' => TRUE,
         'header' =>
-        'API-KEY: 356a192b7913b04c54574d18c28d46e6395428ab' . "\r\n"
+        'API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj' . "\r\n"
         .'Content-Type: application/json' . "\r\n"
         .'Content-Length: ' . strlen($data_string) . "\r\n",
         'content' => $data_string,
@@ -852,17 +857,51 @@ print_r(json_decode($result))
 > The above command returns JSON structured like this:
 
 ```json
-  {
-    "success": ok, 
-    "user_id": 2
-  }   
+{
+  "success": "ok", 
+  "dns": "1.1.1.1", 
+  "ipv4": "10.0.0.4/24", 
+  "ipv6": "fdab:1337:1337:1::4/64"
+}
+
 ```
 
 ### HTTP Request
 
-`POST https://api2.integrity.st/1.0/Wireguard`
+`POST https://api2.integrity.st/1.0/wireguard`
 
 
+## List keys
+
+
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+    "ipv4": "10.0.0.25/32", 
+    "ipv6": "fdab:1337:1337:1::25/128", 
+    "public_key": "qDpB/McJDkL9YuNINuuvupB1tADJrva/g/phwfQrWBw="
+  }, 
+  {
+    "ipv4": "10.0.0.28/32", 
+    "ipv6": "fdab:1337:1337:1::28/128", 
+    "public_key": "SN5qj4uyO9JUcqLhmevSTfxm3ATwud3TDi8xG5pjEwE="
+  }
+]
+```
+
+### HTTP Request
+
+`GET https://api2.integrity.st/1.0/wireguard`
+
+
+## Delete key
+This command is used to delete an public key from the servers
+
+### HTTP Request
+
+`DELETE https://api2.integrity.st/1.0/wireguard/<id>`
 
 
 #IP Check
@@ -873,8 +912,7 @@ print_r(json_decode($result))
 var request = require('request');
 
 request.get(
-    'https://api2.integrity.st/1.0/Ipcheck',
-        { headers: { "API-KEY": "356a192b7913b04c54574d18c28d46e6395428ab",
+    'https://api2.integrity.st/1.0/ipcheck',
         "Accept": "application/json"},
       },  
     function (error, response, body) {
@@ -889,11 +927,10 @@ request.get(
 ```ruby
 require 'net/http'
 
-uri = URI('https://api2.integrity.st/1.0/Ipcheck')
+uri = URI('https://api2.integrity.st/1.0/ipcheck')
 http = Net::HTTP.new(uri.host, uri.port)
 http.use_ssl = true
 req = Net::HTTP::Get.new(uri.path, 'Accept' => 'application/json')
-req['API-KEY'] = '356a192b7913b04c54574d18c28d46e6395428ab'
 res = http.request(req)
 puts "#{res.body}"
 
@@ -903,27 +940,24 @@ puts "#{res.body}"
 import requests
 
 headers = {'user-agent': 'python script',
-        'accept': 'application/json',
-        'API-KEY': '356a192b7913b04c54574d18c28d46e6395428ab'}
-req = requests.get("https://api2.integrity.st/1.0/Ipcheck", headers=headers)
+        'accept': 'application/json'}
+req = requests.get("https://api2.integrity.st/1.0/ipcheck", headers=headers)
 print(req.json())
 ```
 
 ```shell
-curl "https://api2.integrity.st/1.0/Ipcheck" \
-  -H "API-KEY: 356a192b7913b04c54574d18c28d46e6395428ab" \
+curl "https://api2.integrity.st/1.0/ipcheck" \
   -H  "accept: application/json"
 ```
 
 ```php
 <?php
-$result = file_get_contents('https://api2.integrity.st/1.0/Ipcheck', null, stream_context_create(array(
+$result = file_get_contents('https://api2.integrity.st/1.0/ipcheck', null, stream_context_create(array(
 'http' => array(
         'method' => 'GET',
         'ignore_errors' => TRUE,
         'header' =>
-        'API-KEY: 356a192b7913b04c54574d18c28d46e6395428ab' . "\r\n"
-        .'Accept: application/json' . "\r\n"
+        'Accept: application/json' . "\r\n"
 ),
 )));
 
@@ -936,11 +970,98 @@ print_r(json_decode($result))
 > The above command returns JSON structured like this:
 
 ```json
-{"ip": "127.0.0.1", "connected": false}
+{
+"ip": "127.0.0.1", 
+"connected": false
+}
 
 ```
 
 ### HTTP Request
 
-`GET https://api2.integrity.st/1.0/Ipcheck`
+`GET https://api2.integrity.st/1.0/ipcheck`
+
+
+# Locations
+
+## locations
+
+```javascript
+var request = require('request');
+
+request.get(
+    'https://api2.integrity.st/1.0/locations',
+        "Accept": "application/json"},
+      },  
+    function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            console.log(body)
+        } else  { console.log(body); }
+    }   
+);
+
+```
+
+```ruby
+require 'net/http'
+
+uri = URI('https://api2.integrity.st/1.0/locations')
+http = Net::HTTP.new(uri.host, uri.port)
+http.use_ssl = true
+req = Net::HTTP::Get.new(uri.path, 'Accept' => 'application/json')
+res = http.request(req)
+puts "#{res.body}"
+
+```
+
+```python
+import requests
+
+headers = {'user-agent': 'python script',
+        'accept': 'application/json'}
+req = requests.get("https://api2.integrity.st/1.0/locations", headers=headers)
+print(req.json())
+```
+
+```shell
+curl "https://api2.integrity.st/1.0/locations" \
+  -H  "accept: application/json"
+```
+
+```php
+<?php
+$result = file_get_contents('https://api2.integrity.st/1.0/locations', null, stream_context_create(array(
+'http' => array(
+        'method' => 'GET',
+        'ignore_errors' => TRUE,
+        'header' =>
+        'Accept: application/json' . "\r\n"
+),
+)));
+
+print_r(json_decode($result))
+
+?>
+```
+
+
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+    "city": "Malmo", 
+    "country": "Sweden", 
+    "dest_addr": "155.4.89.133", 
+    "hostname": "seML", 
+    "port": 48574, 
+    "public_key": "ipW9/ysMc9vQbg/x7WK/udnl06+NJioWZZ4XIqz4PQY="
+  }
+]
+
+```
+
+### HTTP Request
+
+`GET https://api2.integrity.st/1.0/locations`
 
