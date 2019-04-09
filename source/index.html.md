@@ -45,7 +45,7 @@ Test user authentication
 var request = require('request');
 
 request.post(
-    'https://api2.integrity.st/1.0/auth',
+    'https://api.5july.net/1.0/auth',
 	{ headers: { "API-KEY": "ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj",
 	"Content-Type": "application/json"},
      json: { username: 'test', password: 'testing123' } },
@@ -62,7 +62,7 @@ request.post(
 require 'net/http'
 require 'json'
 
-uri = URI('https://api2.integrity.st/1.0/auth')
+uri = URI('https://api.5july.net/1.0/auth')
 http = Net::HTTP.new(uri.host, uri.port)
 http.use_ssl = true
 req = Net::HTTP::Post.new(uri.path, 'Content-Type' => 'application/json')
@@ -80,13 +80,13 @@ headers = {'user-agent': 'python script',
         'Content-type': 'application/json',
         'API-KEY': 'ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'}
 payload = { 'username': 'test', 'password': 'testing123'}
-req = requests.post("https://api2.integrity.st/1.0/auth", headers=headers, json=payload)
+req = requests.post("https://api.5july.net/1.0/auth", headers=headers, json=payload)
 print(req.json())
 ```
 
 ```shell
 # With shell, you can just pass the correct header with each request
-curl "https://api2.integrity.st/1.0/auth" \
+curl "https://api.5july.net/1.0/auth" \
   -X POST \
   -H "API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj" \
   -H "Content-Type: application/json" \
@@ -97,7 +97,7 @@ curl "https://api2.integrity.st/1.0/auth" \
 <?php
 $data_string = json_encode(array("username" => "test", "password" => "testing123"));
 
-$result = file_get_contents('https://api2.integrity.st/1.0/auth', null, stream_context_create(array(
+$result = file_get_contents('https://api.5july.net/1.0/auth', null, stream_context_create(array(
 'http' => array(
         'method' => 'POST',
         'ignore_errors' => TRUE,
@@ -126,7 +126,7 @@ print_r(json_decode($result))
 
 ### HTTP Request
 
-`POST https://api2.integrity.st/1.0/auth`
+`POST https://api.5july.net/1.0/auth`
 
 ### JSON Parameters
 
@@ -147,7 +147,7 @@ You must replace <code>ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0j
 var request = require('request');
 
 request.get(
-    'https://api2.integrity.st/1.0/user',
+    'https://api.5july.net/1.0/user',
         { headers: { "API-KEY": "ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj",
         "Accept": "application/json"},
       },  
@@ -163,7 +163,7 @@ request.get(
 ```ruby
 require 'net/http'
 
-uri = URI('https://api2.integrity.st/1.0/user')
+uri = URI('https://api.5july.net/1.0/user')
 http = Net::HTTP.new(uri.host, uri.port)
 http.use_ssl = true
 req = Net::HTTP::Get.new(uri.path, 'Accept' => 'application/json')
@@ -179,19 +179,19 @@ import requests
 headers = {'user-agent': 'python script',
         'accept': 'application/json',
         'API-KEY': 'ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'}
-req = requests.get("https://api2.integrity.st/1.0/user", headers=headers)
+req = requests.get("https://api.5july.net/1.0/user", headers=headers)
 print(req.json())
 ```
 
 ```shell
-curl "https://api2.integrity.st/1.0/user" \
+curl "https://api.5july.net/1.0/user" \
   -H "API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj" \
   -H  "accept: application/json" 
 ```
 
 ```php
 <?php
-$result = file_get_contents('https://api2.integrity.st/1.0/user', null, stream_context_create(array(
+$result = file_get_contents('https://api.5july.net/1.0/user', null, stream_context_create(array(
 'http' => array(
         'method' => 'GET',
         'ignore_errors' => TRUE,
@@ -247,7 +247,7 @@ This endpoint retrieves all users.
 
 ### HTTP Request
 
-`GET https://api2.integrity.st/1.0/user`
+`GET https://api.5july.net/1.0/user`
 
 ### URL Parameters
 
@@ -261,7 +261,7 @@ search | enter a string to search for username | no
 
 <aside class="notice">
 Example URL request with multiple parameters:<br>
-https://api2.integrity.st/1.0/user?sort=userid&order=desc&page=1&search=abc123
+https://api.5july.net/1.0/user?sort=userid&order=desc&page=1&search=abc123
 </aside>
 
 
@@ -271,7 +271,7 @@ https://api2.integrity.st/1.0/user?sort=userid&order=desc&page=1&search=abc123
 var request = require('request');
 
 request.get(
-    'https://api2.integrity.st/1.0/user/25',
+    'https://api.5july.net/1.0/user/25',
         { headers: { "API-KEY": "ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj",
         "Accept": "application/json"},
       },  
@@ -287,7 +287,7 @@ request.get(
 ```ruby
 require 'net/http'
 
-uri = URI('https://api2.integrity.st/1.0/user/25')
+uri = URI('https://api.5july.net/1.0/user/25')
 http = Net::HTTP.new(uri.host, uri.port)
 http.use_ssl = true
 req = Net::HTTP::Get.new(uri.path, 'Accept' => 'application/json')
@@ -303,21 +303,21 @@ import requests
 headers = {'user-agent': 'python script',
         'accept': 'application/json',
         'API-KEY': 'ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'}
-req = requests.get("https://api2.integrity.st/1.0/user/25", headers=headers)
+req = requests.get("https://api.5july.net/1.0/user/25", headers=headers)
 print(req.json())
 
 
 ```
 
 ```shell
-curl "https://api2.integrity.st/1.0/user/25" \
+curl "https://api.5july.net/1.0/user/25" \
 -H "API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj" \
 -H  "accept: application/json"
 ```
 
 ```php
 <?php
-$result = file_get_contents('https://api2.integrity.st/1.0/user/25', null, stream_context_create(array(
+$result = file_get_contents('https://api.5july.net/1.0/user/25', null, stream_context_create(array(
 'http' => array(
         'method' => 'GET',
         'ignore_errors' => TRUE,
@@ -349,7 +349,7 @@ This endpoint retrieves a specific user.
 
 ### HTTP Request
 
-`GET https://api2.integrity.st/user/<ID>`
+`GET https://api.5july.net/user/<ID>`
 
 ### URL Parameters
 
@@ -363,7 +363,7 @@ ID | The ID of the user to retrieve
 var request = require('request');
 
 request.post(
-    'https://api2.integrity.st/1.0/user',
+    'https://api.5july.net/1.0/user',
         { headers: { "API-KEY": "ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj",
         "Content-Type": "application/json"},
      json: { password: 'testing123' } },
@@ -380,7 +380,7 @@ request.post(
 require 'net/http'
 require 'json'
 
-uri = URI('https://api2.integrity.st/1.0/user')
+uri = URI('https://api.5july.net/1.0/user')
 http = Net::HTTP.new(uri.host, uri.port)
 http.use_ssl = true
 req = Net::HTTP::Post.new(uri.path, 'Content-Type' => 'application/json')
@@ -398,11 +398,11 @@ headers = {'user-agent': 'python script',
         'Content-type': 'application/json',
         'API-KEY': 'ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'}
 payload = {'password' : 'abc1234'}
-req = requests.post("https://api2.integrity.st/1.0/user", headers=headers, json=payload)
+req = requests.post("https://api.5july.net/1.0/user", headers=headers, json=payload)
 ```
 
 ```shell
-curl "https://api2.integrity.st/1.0/user" \
+curl "https://api.5july.net/1.0/user" \
   -X POST \
   -H "API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj" \
   -H  "Content-type: application/json" \
@@ -413,7 +413,7 @@ curl "https://api2.integrity.st/1.0/user" \
 <?php
 $data_string = json_encode(array("password" => "abc1234"));
 
-$result = file_get_contents('https://api2.integrity.st/1.0/user', null, stream_context_create(array(
+$result = file_get_contents('https://api.5july.net/1.0/user', null, stream_context_create(array(
 	'http' => array(
 	'method' => 'POST',
 	'ignore_errors' => TRUE,
@@ -465,7 +465,7 @@ an empty json payload will autogenerate a password for you.
 var request = require('request');
 
 request.put(
-    'https://api2.integrity.st/1.0/user/40',
+    'https://api.5july.net/1.0/user/40',
         { headers: { "API-KEY": "ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj",
         "Content-Type": "application/json"},
      json: { username: "roxyroxy14", password: 'testing123', enable: 0 } },
@@ -481,7 +481,7 @@ request.put(
 require 'net/http'
 require 'json'
 
-uri = URI('https://api2.integrity.st/1.0/user/23')
+uri = URI('https://api.5july.net/1.0/user/23')
 http = Net::HTTP.new(uri.host, uri.port)
 http.use_ssl = true
 req = Net::HTTP::Put.new(uri.path, 'Content-Type' => 'application/json')
@@ -499,7 +499,7 @@ headers = {'user-agent': 'python script',
         'Content-type': 'application/json',
         'API-KEY': 'ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'}
 payload = {'username': 'Johnny2', 'password' : 'abc1234', 'enable': 1}
-req = requests.put("https://api2.integrity.st/user/<userid>", headers=headers, json=payload)
+req = requests.put("https://api.5july.net/user/<userid>", headers=headers, json=payload)
 ```
 
 ```shell
@@ -514,7 +514,7 @@ curl "https://api.integrity.st/1.0/user/<userid>" \
 <?php
 $data_string = json_encode(array("password" => "123456789","username" => "roxyroxy12", "enable" => 0));
 
-$result = file_get_contents('https://api2.integrity.st/1.0/user/23', null, stream_context_create(array(
+$result = file_get_contents('https://api.5july.net/1.0/user/23', null, stream_context_create(array(
 'http' => array(
         'method' => 'PUT',
         'ignore_errors' => TRUE,
@@ -569,7 +569,7 @@ enable | specifiy 1 to enable and 0 to disable the user
 var request = require('request');
 
 request(
-    'https://api2.integrity.st/1.0/user/40',
+    'https://api.5july.net/1.0/user/40',
         { method: 'delete',
                 headers: { "API-KEY": "ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj",
         "Accept": "application/json"},
@@ -585,7 +585,7 @@ request(
 ```ruby
 require 'net/http'
 
-uri = URI('https://api2.integrity.st/1.0/user/21')
+uri = URI('https://api.5july.net/1.0/user/21')
 http = Net::HTTP.new(uri.host, uri.port)
 http.use_ssl = true
 req = Net::HTTP::Delete.new(uri.path, 'Accept' => 'application/json')
@@ -615,7 +615,7 @@ curl "https://api.integrity.st/1.0/user/<userid>" \
 
 ```php
 <?php
-$result = file_get_contents('https://api2.integrity.st/1.0/user/25', null, stream_context_create(array(
+$result = file_get_contents('https://api.5july.net/1.0/user/25', null, stream_context_create(array(
 'http' => array(
         'method' => 'DELETE',
         'ignore_errors' => TRUE,
@@ -658,7 +658,7 @@ userid | The userid of the user to delete
 var request = require('request');
 
 request.get(
-    'https://api2.integrity.st/1.0/stats/all',
+    'https://api.5july.net/1.0/stats/all',
         { headers: { "API-KEY": "ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj",
         "Accept": "application/json"},
       },  
@@ -674,7 +674,7 @@ request.get(
 ```ruby
 require 'net/http'
 
-uri = URI('https://api2.integrity.st/1.0/stats/all')
+uri = URI('https://api.5july.net/1.0/stats/all')
 http = Net::HTTP.new(uri.host, uri.port)
 http.use_ssl = true
 req = Net::HTTP::Get.new(uri.path, 'Accept' => 'application/json')
@@ -690,19 +690,19 @@ import requests
 headers = {'user-agent': 'python script',
         'accept': 'application/json',
         'API-KEY': 'ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'}
-req = requests.get("https://api2.integrity.st/1.0/Stats/all", headers=headers)
+req = requests.get("https://api.5july.net/1.0/Stats/all", headers=headers)
 print(req.json())
 ```
 
 ```shell
-curl "https://api2.integrity.st/1.0/stats/all" \
+curl "https://api.5july.net/1.0/stats/all" \
   -H "API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj" \
   -H  "accept: application/json"
 ```
 
 ```php
 <?php
-$result = file_get_contents('https://api2.integrity.st/1.0/stats/all', null, stream_context_create(array(
+$result = file_get_contents('https://api.5july.net/1.0/stats/all', null, stream_context_create(array(
 'http' => array(
         'method' => 'GET',
         'ignore_errors' => TRUE,
@@ -765,7 +765,7 @@ This endpoint display stats for your API account
 
 ### HTTP Request
 
-`GET https://api2.integrity.st/1.0/stats/<option>`
+`GET https://api.5july.net/1.0/stats/<option>`
 
 ### URL Parameters
 
@@ -787,7 +787,7 @@ Basically you want to run this on the client side. either in a bashscript. you c
 var request = require('request');
 
 request.post(
-    'https://api2.integrity.st/1.0/wireguard',
+    'https://api.5july.net/1.0/wireguard',
         { headers: { "API-KEY": "ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj",
         "Content-Type": "application/json"},
      json: { username: 'test', password: 'testing123', pubkey: "qPTi/SUqY36cEimdbRraqp4PJcrLIPiKtovaEUPPEFY=" } },
@@ -804,7 +804,7 @@ request.post(
 require 'net/http'
 require 'json'
 
-uri = URI('https://api2.integrity.st/1.0/wireguard')
+uri = URI('https://api.5july.net/1.0/wireguard')
 http = Net::HTTP.new(uri.host, uri.port)
 http.use_ssl = true
 req = Net::HTTP::Post.new(uri.path, 'Content-Type' => 'application/json')
@@ -822,13 +822,13 @@ headers = {'user-agent': 'python script',
         'Content-type': 'application/json',
         'API-KEY': 'ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'}
 payload = { 'username': 'demodemo', 'password': 'abc1234', 'pubkey': 'qPTi/SUqY36cEimdbRraqp4PJcrLIPiKtovaEUPPEFY='}
-req = requests.post("https://api2.integrity.st/1.0/wireguard", headers=headers, json=payload)
+req = requests.post("https://api.5july.net/1.0/wireguard", headers=headers, json=payload)
 print(req.json())
 ```
 
 ```shell
 # With shell, you can just pass the correct header with each request
-curl "https://api2.integrity.st/1.0/wireguard" \
+curl "https://api.5july.net/1.0/wireguard" \
   -X POST \
   -H "API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj" \
   -H "Content-Type: application/json" \
@@ -839,7 +839,7 @@ curl "https://api2.integrity.st/1.0/wireguard" \
 <?php
 $data_string = json_encode(array("username" => "test", "password" => "testing123", "pubkey" => "qPTi/SUqY36cEimdbRraqp4PJcrLIPiKtovaEUPPEFY="));
 
-$result = file_get_contents('https://api2.integrity.st/1.0/wireguard', null, stream_context_create(array(
+$result = file_get_contents('https://api.5july.net/1.0/wireguard', null, stream_context_create(array(
 'http' => array(
         'method' => 'POST',
         'ignore_errors' => TRUE,
@@ -868,7 +868,7 @@ print_r(json_decode($result))
 
 ### HTTP Request
 
-`POST https://api2.integrity.st/1.0/wireguard`
+`POST https://api.5july.net/1.0/wireguard`
 
 
 ## List keys
@@ -893,7 +893,7 @@ print_r(json_decode($result))
 
 ### HTTP Request
 
-`GET https://api2.integrity.st/1.0/wireguard`
+`GET https://api.5july.net/1.0/wireguard`
 
 
 ## Delete key
@@ -901,7 +901,7 @@ This command is used to delete an public key from the servers
 
 ### HTTP Request
 
-`DELETE https://api2.integrity.st/1.0/wireguard/<id>`
+`DELETE https://api.5july.net/1.0/wireguard/<id>`
 
 
 #IP Check
@@ -912,7 +912,7 @@ This command is used to delete an public key from the servers
 var request = require('request');
 
 request.get(
-    'https://api2.integrity.st/1.0/ipcheck',
+    'https://api.5july.net/1.0/ipcheck',
         "Accept": "application/json"},
       },  
     function (error, response, body) {
@@ -927,7 +927,7 @@ request.get(
 ```ruby
 require 'net/http'
 
-uri = URI('https://api2.integrity.st/1.0/ipcheck')
+uri = URI('https://api.5july.net/1.0/ipcheck')
 http = Net::HTTP.new(uri.host, uri.port)
 http.use_ssl = true
 req = Net::HTTP::Get.new(uri.path, 'Accept' => 'application/json')
@@ -941,18 +941,18 @@ import requests
 
 headers = {'user-agent': 'python script',
         'accept': 'application/json'}
-req = requests.get("https://api2.integrity.st/1.0/ipcheck", headers=headers)
+req = requests.get("https://api.5july.net/1.0/ipcheck", headers=headers)
 print(req.json())
 ```
 
 ```shell
-curl "https://api2.integrity.st/1.0/ipcheck" \
+curl "https://api.5july.net/1.0/ipcheck" \
   -H  "accept: application/json"
 ```
 
 ```php
 <?php
-$result = file_get_contents('https://api2.integrity.st/1.0/ipcheck', null, stream_context_create(array(
+$result = file_get_contents('https://api.5july.net/1.0/ipcheck', null, stream_context_create(array(
 'http' => array(
         'method' => 'GET',
         'ignore_errors' => TRUE,
@@ -979,7 +979,7 @@ print_r(json_decode($result))
 
 ### HTTP Request
 
-`GET https://api2.integrity.st/1.0/ipcheck`
+`GET https://api.5july.net/1.0/ipcheck`
 
 
 # Locations
@@ -990,7 +990,7 @@ print_r(json_decode($result))
 var request = require('request');
 
 request.get(
-    'https://api2.integrity.st/1.0/locations',
+    'https://api.5july.net/1.0/locations',
         "Accept": "application/json"},
       },  
     function (error, response, body) {
@@ -1005,7 +1005,7 @@ request.get(
 ```ruby
 require 'net/http'
 
-uri = URI('https://api2.integrity.st/1.0/locations')
+uri = URI('https://api.5july.net/1.0/locations')
 http = Net::HTTP.new(uri.host, uri.port)
 http.use_ssl = true
 req = Net::HTTP::Get.new(uri.path, 'Accept' => 'application/json')
@@ -1019,18 +1019,18 @@ import requests
 
 headers = {'user-agent': 'python script',
         'accept': 'application/json'}
-req = requests.get("https://api2.integrity.st/1.0/locations", headers=headers)
+req = requests.get("https://api.5july.net/1.0/locations", headers=headers)
 print(req.json())
 ```
 
 ```shell
-curl "https://api2.integrity.st/1.0/locations" \
+curl "https://api.5july.net/1.0/locations" \
   -H  "accept: application/json"
 ```
 
 ```php
 <?php
-$result = file_get_contents('https://api2.integrity.st/1.0/locations', null, stream_context_create(array(
+$result = file_get_contents('https://api.5july.net/1.0/locations', null, stream_context_create(array(
 'http' => array(
         'method' => 'GET',
         'ignore_errors' => TRUE,
@@ -1063,5 +1063,5 @@ print_r(json_decode($result))
 
 ### HTTP Request
 
-`GET https://api2.integrity.st/1.0/locations`
+`GET https://api.5july.net/1.0/locations`
 
