@@ -442,11 +442,11 @@ print_r(json_decode($result))
 }
 ```
 
-This endpoint deletes a specific kitten.
+This endpoint create a new user
 
 ### HTTP Request
 
-`DELETE https://api.integrity.st/1.0/user`
+`POST https://api.integrity.st/1.0/user`
 
 ### json Parameters
 
