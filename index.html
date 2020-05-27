@@ -1,0 +1,1332 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen-cff6a829.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-c427a123.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-c5541673.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;python&quot;,&quot;ruby&quot;,&quot;javascript&quot;,&quot;php&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-d78e5499.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">cURL</a>
+              <a href="#" data-language-name="python">Python</a>
+              <a href="#" data-language-name="ruby">Ruby</a>
+              <a href="#" data-language-name="javascript">Nodejs</a>
+              <a href="#" data-language-name="php">PHP</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#authentication-amp-headers" class="toc-h1 toc-link" data-title="Authentication &amp; Headers">Authentication &amp; Headers</a>
+          </li>
+          <li>
+            <a href="#with-each-api-call-you-will-need-to-setup-http-request-headers-to-authenticate" class="toc-h1 toc-link" data-title="With each API call, you will need to setup http request headers to authenticate.">With each API call, you will need to setup http request headers to authenticate.</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-headers" class="toc-h2 toc-link" data-title="HTTP HEADERS">HTTP HEADERS</a>
+                  </li>
+                  <li>
+                    <a href="#auth" class="toc-h2 toc-link" data-title="Auth">Auth</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#user" class="toc-h1 toc-link" data-title="User">User</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-users" class="toc-h2 toc-link" data-title="Get All Users">Get All Users</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-user" class="toc-h2 toc-link" data-title="Get a Specific User">Get a Specific User</a>
+                  </li>
+                  <li>
+                    <a href="#create-a-new-user" class="toc-h2 toc-link" data-title="Create a new user">Create a new user</a>
+                  </li>
+                  <li>
+                    <a href="#update-a-specific-user" class="toc-h2 toc-link" data-title="Update a specific User">Update a specific User</a>
+                  </li>
+                  <li>
+                    <a href="#delete-a-specific-user" class="toc-h2 toc-link" data-title="Delete a Specific User">Delete a Specific User</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#stats" class="toc-h1 toc-link" data-title="Stats">Stats</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-stats" class="toc-h2 toc-link" data-title="Get all stats">Get all stats</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#openvpn" class="toc-h1 toc-link" data-title="OpenVPN">OpenVPN</a>
+          </li>
+          <li>
+            <a href="#wireguard" class="toc-h1 toc-link" data-title="Wireguard">Wireguard</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#add-key" class="toc-h2 toc-link" data-title="Add key">Add key</a>
+                  </li>
+                  <li>
+                    <a href="#list-keys" class="toc-h2 toc-link" data-title="List keys">List keys</a>
+                  </li>
+                  <li>
+                    <a href="#delete-key" class="toc-h2 toc-link" data-title="Delete key">Delete key</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#ip-check" class="toc-h1 toc-link" data-title="IP Check">IP Check</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#ipcheck" class="toc-h2 toc-link" data-title="ipcheck">ipcheck</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#locations" class="toc-h1 toc-link" data-title="Locations">Locations</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#locations-2" class="toc-h2 toc-link" data-title="locations">locations</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='#'>Sign Up for a Developer Key</a></li>
+            <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to the Integrity.st API! You can use our API to access VPN API endpoints, which can get information on various VPN accounts and create and delete information from our database</p>
+
+<p>We have language bindings in Shell, Python, Ruby, Nodejs, and PHP! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
+<h1 id='authentication-amp-headers'>Authentication &amp; Headers</h1><h1 id='with-each-api-call-you-will-need-to-setup-http-request-headers-to-authenticate'>With each API call, you will need to setup http request headers to authenticate.</h1>
+<p>This example API documentation page was created with <a href="https://github.com/slatedocs/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>215e6ee1a630039da8b53b1546e624c388a0f39e</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id='http-headers'>HTTP HEADERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>API-KEY</td>
+<td>Enter your api key, 64 bit string</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td><code>application/json</code></td>
+<td>no</td>
+</tr>
+<tr>
+<td>Accept</td>
+<td><code>application/json</code></td>
+<td>no</td>
+</tr>
+</tbody></table>
+
+<p>note that a few commands such as ipcheck, locations do not require API-KEY.</p>
+<h2 id='auth'>Auth</h2>
+<p>Test user authentication</p>
+
+<blockquote>
+<p>To authorize, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">request</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">request</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span>
+    <span class="dl">'</span><span class="s1">https://api.5july.net/1.0/auth</span><span class="dl">'</span><span class="p">,</span>
+    <span class="p">{</span> <span class="na">headers</span><span class="p">:</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">API-KEY</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">},</span>
+     <span class="na">json</span><span class="p">:</span> <span class="p">{</span> <span class="na">username</span><span class="p">:</span> <span class="dl">'</span><span class="s1">test</span><span class="dl">'</span><span class="p">,</span> <span class="na">password</span><span class="p">:</span> <span class="dl">'</span><span class="s1">testing123</span><span class="dl">'</span> <span class="p">}</span> <span class="p">},</span>
+    <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">error</span> <span class="o">&amp;&amp;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span>  <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span> <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'net/http'</span>
+<span class="nb">require</span> <span class="s1">'json'</span>
+
+<span class="n">uri</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s1">'https://api.5july.net/1.0/auth'</span><span class="p">)</span>
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">uri</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">uri</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="n">req</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Post</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">uri</span><span class="p">.</span><span class="nf">path</span><span class="p">,</span> <span class="s1">'Content-Type'</span> <span class="o">=&gt;</span> <span class="s1">'application/json'</span><span class="p">)</span>
+<span class="n">req</span><span class="p">[</span><span class="s1">'API-KEY'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'</span>
+<span class="n">req</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="p">{</span><span class="ss">username: </span><span class="s1">'test'</span><span class="p">,</span> <span class="ss">password: </span><span class="s1">'testing123'</span><span class="p">}.</span><span class="nf">to_json</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="s2">"</span><span class="si">#{</span><span class="n">res</span><span class="p">.</span><span class="nf">body</span><span class="si">}</span><span class="s2">"</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'user-agent'</span><span class="p">:</span> <span class="s">'python script'</span><span class="p">,</span>
+        <span class="s">'Content-type'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
+        <span class="s">'API-KEY'</span><span class="p">:</span> <span class="s">'ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'</span><span class="p">}</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'username'</span><span class="p">:</span> <span class="s">'test'</span><span class="p">,</span> <span class="s">'password'</span><span class="p">:</span> <span class="s">'testing123'</span><span class="p">}</span>
+<span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"https://api.5july.net/1.0/auth"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
+curl <span class="s2">"https://api.5july.net/1.0/auth"</span> <span class="se">\</span>
+  <span class="nt">-X</span> POST <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{"username": "test", "password": "testing123"}'</span>
+</code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$data_string</span> <span class="o">=</span> <span class="nb">json_encode</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s2">"username"</span> <span class="o">=&gt;</span> <span class="s2">"test"</span><span class="p">,</span> <span class="s2">"password"</span> <span class="o">=&gt;</span> <span class="s2">"testing123"</span><span class="p">));</span>
+
+<span class="nv">$result</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://api.5july.net/1.0/auth'</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="nb">stream_context_create</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+<span class="s1">'http'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'method'</span> <span class="o">=&gt;</span> <span class="s1">'POST'</span><span class="p">,</span>
+        <span class="s1">'ignore_errors'</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
+        <span class="s1">'header'</span> <span class="o">=&gt;</span>  
+        <span class="s1">'API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'</span> <span class="o">.</span> <span class="s2">"</span><span class="se">\r\n</span><span class="s2">"</span>
+        <span class="o">.</span><span class="s1">'Content-Type: application/json'</span> <span class="o">.</span> <span class="s2">"</span><span class="se">\r\n</span><span class="s2">"</span>
+        <span class="o">.</span><span class="s1">'Content-Length: '</span> <span class="o">.</span> <span class="nb">strlen</span><span class="p">(</span><span class="nv">$data_string</span><span class="p">)</span> <span class="o">.</span> <span class="s2">"</span><span class="se">\r\n</span><span class="s2">"</span><span class="p">,</span>
+        <span class="s1">'content'</span> <span class="o">=&gt;</span> <span class="nv">$data_string</span><span class="p">,</span>
+<span class="p">),</span>
+<span class="p">)));</span>
+<span class="nb">print_r</span><span class="p">(</span><span class="nb">json_decode</span><span class="p">(</span><span class="nv">$result</span><span class="p">))</span>
+<span class="cp">?&gt;</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w"> 
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w"> 
+  </span><span class="nl">"reseller_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> 
+  </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wed, 05 Dec 2018 10:31:41 GMT"</span><span class="p">,</span><span class="w"> 
+  </span><span class="nl">"enable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request'>HTTP Request</h3>
+<p><code>POST https://api.5july.net/1.0/auth</code></p>
+<h3 id='json-parameters'>JSON Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>enter user username to authenticate with</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>password</td>
+<td>enter user password to authenticate with</td>
+<td>yes</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+You must replace <code>ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj</code> with your personal API key.
+</aside>
+<h1 id='user'>User</h1><h2 id='get-all-users'>Get All Users</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">request</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">request</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span>
+    <span class="dl">'</span><span class="s1">https://api.5july.net/1.0/user</span><span class="dl">'</span><span class="p">,</span>
+        <span class="p">{</span> <span class="na">headers</span><span class="p">:</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">API-KEY</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">},</span>
+      <span class="p">},</span>  
+    <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">error</span> <span class="o">&amp;&amp;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span>  <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span> <span class="p">}</span>
+    <span class="p">}</span>   
+<span class="p">);</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">uri</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s1">'https://api.5july.net/1.0/user'</span><span class="p">)</span>
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">uri</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">uri</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="n">req</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">uri</span><span class="p">.</span><span class="nf">path</span><span class="p">,</span> <span class="s1">'Accept'</span> <span class="o">=&gt;</span> <span class="s1">'application/json'</span><span class="p">)</span>
+<span class="n">req</span><span class="p">[</span><span class="s1">'API-KEY'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="s2">"</span><span class="si">#{</span><span class="n">res</span><span class="p">.</span><span class="nf">body</span><span class="si">}</span><span class="s2">"</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'user-agent'</span><span class="p">:</span> <span class="s">'python script'</span><span class="p">,</span>
+        <span class="s">'accept'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
+        <span class="s">'API-KEY'</span><span class="p">:</span> <span class="s">'ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'</span><span class="p">}</span>
+<span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://api.5july.net/1.0/user"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.5july.net/1.0/user"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj"</span> <span class="se">\</span>
+  <span class="nt">-H</span>  <span class="s2">"accept: application/json"</span> 
+</code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$result</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://api.5july.net/1.0/user'</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="nb">stream_context_create</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+<span class="s1">'http'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'method'</span> <span class="o">=&gt;</span> <span class="s1">'GET'</span><span class="p">,</span>
+        <span class="s1">'ignore_errors'</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
+        <span class="s1">'header'</span> <span class="o">=&gt;</span>  
+        <span class="s1">'API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'</span> <span class="o">.</span> <span class="s2">"</span><span class="se">\r\n</span><span class="s2">"</span>
+        <span class="o">.</span><span class="s1">'Accept: application/json'</span> <span class="o">.</span> <span class="s2">"</span><span class="se">\r\n</span><span class="s2">"</span>
+<span class="p">),</span>
+<span class="p">)));</span>
+
+
+<span class="cp">?&gt;</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"account_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> 
+        </span><span class="nl">"account_typename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PREMIUM"</span><span class="p">,</span><span class="w"> 
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wed, 31 Oct 2018 04:41:28 GMT"</span><span class="p">,</span><span class="w"> 
+        </span><span class="nl">"enable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> 
+        </span><span class="nl">"reseller_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> 
+        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wed, 31 Oct 2018 06:13:11 GMT"</span><span class="p">,</span><span class="w"> 
+        </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="p">,</span><span class="w"> 
+        </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"roxyroxy"</span><span class="w">
+      </span><span class="p">},</span><span class="w"> 
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"account_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> 
+        </span><span class="nl">"account_typename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PREMIUM"</span><span class="p">,</span><span class="w"> 
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wed, 31 Oct 2018 04:41:14 GMT"</span><span class="p">,</span><span class="w"> 
+        </span><span class="nl">"enable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> 
+        </span><span class="nl">"reseller_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> 
+        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wed, 31 Oct 2018 04:41:14 GMT"</span><span class="p">,</span><span class="w"> 
+        </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">27</span><span class="p">,</span><span class="w"> 
+        </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vfsw381711"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w"> 
+    </span><span class="nl">"max_row_limit_per_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> 
+    </span><span class="nl">"rows_on_this_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> 
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w"> 
+    </span><span class="nl">"this_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> 
+    </span><span class="nl">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> 
+    </span><span class="nl">"total_rows"</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+
+</span></code></pre></div>
+<p>This endpoint retrieves all users.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://api.5july.net/1.0/user</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>order</td>
+<td>DESC or ASC</td>
+<td>no</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>sort result by [&quot;userid&quot;, &quot;username&quot;, &quot;enable&quot;]</td>
+<td>no</td>
+</tr>
+<tr>
+<td>page</td>
+<td>enter which result page to display</td>
+<td>no</td>
+</tr>
+<tr>
+<td>search</td>
+<td>enter a string to search for username</td>
+<td>no</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+Example URL request with multiple parameters:<br>
+https://api.5july.net/1.0/user?sort=userid&order=desc&page=1&search=abc123
+</aside>
+<h2 id='get-a-specific-user'>Get a Specific User</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">request</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">request</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span>
+    <span class="dl">'</span><span class="s1">https://api.5july.net/1.0/user/25</span><span class="dl">'</span><span class="p">,</span>
+        <span class="p">{</span> <span class="na">headers</span><span class="p">:</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">API-KEY</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">},</span>
+      <span class="p">},</span>  
+    <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">error</span> <span class="o">&amp;&amp;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span>  <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span> <span class="p">}</span>
+    <span class="p">}</span>   
+<span class="p">);</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">uri</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s1">'https://api.5july.net/1.0/user/25'</span><span class="p">)</span>
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">uri</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">uri</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="n">req</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">uri</span><span class="p">.</span><span class="nf">path</span><span class="p">,</span> <span class="s1">'Accept'</span> <span class="o">=&gt;</span> <span class="s1">'application/json'</span><span class="p">)</span>
+<span class="n">req</span><span class="p">[</span><span class="s1">'API-KEY'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="s2">"</span><span class="si">#{</span><span class="n">res</span><span class="p">.</span><span class="nf">body</span><span class="si">}</span><span class="s2">"</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'user-agent'</span><span class="p">:</span> <span class="s">'python script'</span><span class="p">,</span>
+        <span class="s">'accept'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
+        <span class="s">'API-KEY'</span><span class="p">:</span> <span class="s">'ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'</span><span class="p">}</span>
+<span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://api.5july.net/1.0/user/25"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+
+
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.5july.net/1.0/user/25"</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s2">"API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj"</span> <span class="se">\</span>
+<span class="nt">-H</span>  <span class="s2">"accept: application/json"</span>
+</code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$result</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://api.5july.net/1.0/user/25'</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="nb">stream_context_create</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+<span class="s1">'http'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'method'</span> <span class="o">=&gt;</span> <span class="s1">'GET'</span><span class="p">,</span>
+        <span class="s1">'ignore_errors'</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
+        <span class="s1">'header'</span> <span class="o">=&gt;</span>  
+        <span class="s1">'API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'</span> <span class="o">.</span> <span class="s2">"</span><span class="se">\r\n</span><span class="s2">"</span>
+        <span class="o">.</span><span class="s1">'Accept: application/json'</span> <span class="o">.</span> <span class="s2">"</span><span class="se">\r\n</span><span class="s2">"</span>
+<span class="p">),</span>
+<span class="p">)));</span>
+<span class="cp">?&gt;</span>
+
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wed, 31 Oct 2018 04:40:37 GMT"</span><span class="p">,</span><span class="w"> 
+  </span><span class="nl">"enable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> 
+  </span><span class="nl">"reseller_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> 
+  </span><span class="nl">"reseller_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> 
+  </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wed, 31 Oct 2018 04:40:37 GMT"</span><span class="p">,</span><span class="w"> 
+  </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w"> 
+  </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"heao902376"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves a specific user.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET https://api.5july.net/user/&lt;ID&gt;</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the user to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='create-a-new-user'>Create a new user</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">request</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">request</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span>
+    <span class="dl">'</span><span class="s1">https://api.5july.net/1.0/user</span><span class="dl">'</span><span class="p">,</span>
+        <span class="p">{</span> <span class="na">headers</span><span class="p">:</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">API-KEY</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">},</span>
+     <span class="na">json</span><span class="p">:</span> <span class="p">{</span> <span class="na">password</span><span class="p">:</span> <span class="dl">'</span><span class="s1">testing123</span><span class="dl">'</span> <span class="p">}</span> <span class="p">},</span>
+    <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">error</span> <span class="o">&amp;&amp;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span>  <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span> <span class="p">}</span>
+    <span class="p">}</span>   
+<span class="p">);</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'net/http'</span>
+<span class="nb">require</span> <span class="s1">'json'</span>
+
+<span class="n">uri</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s1">'https://api.5july.net/1.0/user'</span><span class="p">)</span>
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">uri</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">uri</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="n">req</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Post</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">uri</span><span class="p">.</span><span class="nf">path</span><span class="p">,</span> <span class="s1">'Content-Type'</span> <span class="o">=&gt;</span> <span class="s1">'application/json'</span><span class="p">)</span>
+<span class="n">req</span><span class="p">[</span><span class="s1">'API-KEY'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'</span>
+<span class="n">req</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="p">{</span><span class="ss">password: </span><span class="s1">'testing123'</span><span class="p">}.</span><span class="nf">to_json</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="s2">"</span><span class="si">#{</span><span class="n">res</span><span class="p">.</span><span class="nf">body</span><span class="si">}</span><span class="s2">"</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'user-agent'</span><span class="p">:</span> <span class="s">'python script'</span><span class="p">,</span>
+        <span class="s">'Content-type'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
+        <span class="s">'API-KEY'</span><span class="p">:</span> <span class="s">'ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'</span><span class="p">}</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s">'password'</span> <span class="p">:</span> <span class="s">'abc1234'</span><span class="p">}</span>
+<span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"https://api.5july.net/1.0/user"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.5july.net/1.0/user"</span> <span class="se">\</span>
+  <span class="nt">-X</span> POST <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj"</span> <span class="se">\</span>
+  <span class="nt">-H</span>  <span class="s2">"Content-type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{"password": "abc1234"}'</span>
+</code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$data_string</span> <span class="o">=</span> <span class="nb">json_encode</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s2">"password"</span> <span class="o">=&gt;</span> <span class="s2">"abc1234"</span><span class="p">));</span>
+
+<span class="nv">$result</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://api.5july.net/1.0/user'</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="nb">stream_context_create</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+    <span class="s1">'http'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'method'</span> <span class="o">=&gt;</span> <span class="s1">'POST'</span><span class="p">,</span>
+    <span class="s1">'ignore_errors'</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
+    <span class="s1">'header'</span> <span class="o">=&gt;</span>  
+    <span class="s1">'API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'</span> <span class="o">.</span> <span class="s2">"</span><span class="se">\r\n</span><span class="s2">"</span>
+    <span class="o">.</span><span class="s1">'Content-Type: application/json'</span> <span class="o">.</span> <span class="s2">"</span><span class="se">\r\n</span><span class="s2">"</span>
+    <span class="o">.</span><span class="s1">'Content-Length: '</span> <span class="o">.</span> <span class="nb">strlen</span><span class="p">(</span><span class="nv">$data_string</span><span class="p">)</span> <span class="o">.</span> <span class="s2">"</span><span class="se">\r\n</span><span class="s2">"</span><span class="p">,</span>
+    <span class="s1">'content'</span> <span class="o">=&gt;</span> <span class="nv">$data_string</span><span class="p">,</span>
+<span class="p">),</span>
+<span class="p">)));</span>
+
+<span class="nb">print_r</span><span class="p">(</span><span class="nb">json_decode</span><span class="p">(</span><span class="nv">$result</span><span class="p">))</span>
+<span class="cp">?&gt;</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">29</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jlgu468206"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc1234"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"reseller_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"enable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"account_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint create a new user</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>POST https://api.integrity.st/1.0/user</code></p>
+<h3 id='json-parameters-2'>json Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>password</td>
+<td>choose a password for the user</td>
+<td>no</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+an empty json payload will autogenerate a password for you.
+</aside>
+<h2 id='update-a-specific-user'>Update a specific User</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">request</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">request</span><span class="p">.</span><span class="nx">put</span><span class="p">(</span>
+    <span class="dl">'</span><span class="s1">https://api.5july.net/1.0/user/40</span><span class="dl">'</span><span class="p">,</span>
+        <span class="p">{</span> <span class="na">headers</span><span class="p">:</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">API-KEY</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">},</span>
+     <span class="na">json</span><span class="p">:</span> <span class="p">{</span> <span class="na">username</span><span class="p">:</span> <span class="dl">"</span><span class="s2">roxyroxy14</span><span class="dl">"</span><span class="p">,</span> <span class="na">password</span><span class="p">:</span> <span class="dl">'</span><span class="s1">testing123</span><span class="dl">'</span><span class="p">,</span> <span class="na">enable</span><span class="p">:</span> <span class="mi">0</span> <span class="p">}</span> <span class="p">},</span>
+    <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">error</span> <span class="o">&amp;&amp;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span>  <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span> <span class="p">}</span>
+    <span class="p">}</span>   
+<span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'net/http'</span>
+<span class="nb">require</span> <span class="s1">'json'</span>
+
+<span class="n">uri</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s1">'https://api.5july.net/1.0/user/23'</span><span class="p">)</span>
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">uri</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">uri</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="n">req</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Put</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">uri</span><span class="p">.</span><span class="nf">path</span><span class="p">,</span> <span class="s1">'Content-Type'</span> <span class="o">=&gt;</span> <span class="s1">'application/json'</span><span class="p">)</span>
+<span class="n">req</span><span class="p">[</span><span class="s1">'API-KEY'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'</span>
+<span class="n">req</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="p">{</span><span class="ss">password: </span><span class="s1">'abc1234'</span><span class="p">,</span> <span class="ss">username: </span><span class="s1">'Johnny2'</span><span class="p">,</span> <span class="ss">enable: </span><span class="mi">1</span><span class="p">}.</span><span class="nf">to_json</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="s2">"</span><span class="si">#{</span><span class="n">res</span><span class="p">.</span><span class="nf">body</span><span class="si">}</span><span class="s2">"</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'user-agent'</span><span class="p">:</span> <span class="s">'python script'</span><span class="p">,</span>
+        <span class="s">'Content-type'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
+        <span class="s">'API-KEY'</span><span class="p">:</span> <span class="s">'ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'</span><span class="p">}</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s">'username'</span><span class="p">:</span> <span class="s">'Johnny2'</span><span class="p">,</span> <span class="s">'password'</span> <span class="p">:</span> <span class="s">'abc1234'</span><span class="p">,</span> <span class="s">'enable'</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+<span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s">"https://api.5july.net/user/&lt;userid&gt;"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.integrity.st/1.0/user/&lt;userid&gt;"</span> <span class="se">\</span>
+  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj"</span> <span class="se">\</span>
+  <span class="nt">-H</span>  <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{"username": "roxyroxy", "password": "abc1234", enable: 1}'</span>
+</code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$data_string</span> <span class="o">=</span> <span class="nb">json_encode</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s2">"password"</span> <span class="o">=&gt;</span> <span class="s2">"123456789"</span><span class="p">,</span><span class="s2">"username"</span> <span class="o">=&gt;</span> <span class="s2">"roxyroxy12"</span><span class="p">,</span> <span class="s2">"enable"</span> <span class="o">=&gt;</span> <span class="mi">0</span><span class="p">));</span>
+
+<span class="nv">$result</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://api.5july.net/1.0/user/23'</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="nb">stream_context_create</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+<span class="s1">'http'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'method'</span> <span class="o">=&gt;</span> <span class="s1">'PUT'</span><span class="p">,</span>
+        <span class="s1">'ignore_errors'</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
+        <span class="s1">'header'</span> <span class="o">=&gt;</span>  
+        <span class="s1">'API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'</span> <span class="o">.</span> <span class="s2">"</span><span class="se">\r\n</span><span class="s2">"</span>
+        <span class="o">.</span><span class="s1">'Content-Type: application/json'</span> <span class="o">.</span> <span class="s2">"</span><span class="se">\r\n</span><span class="s2">"</span>
+        <span class="o">.</span><span class="s1">'Content-Length: '</span> <span class="o">.</span> <span class="nb">strlen</span><span class="p">(</span><span class="nv">$data_string</span><span class="p">)</span> <span class="o">.</span> <span class="s2">"</span><span class="se">\r\n</span><span class="s2">"</span><span class="p">,</span>
+        <span class="s1">'content'</span> <span class="o">=&gt;</span> <span class="nv">$data_string</span><span class="p">,</span>
+<span class="p">),</span>
+<span class="p">)));</span>
+<span class="nb">print_r</span><span class="p">(</span><span class="nb">json_decode</span><span class="p">(</span><span class="nv">$result</span><span class="p">))</span>
+
+<span class="cp">?&gt;</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<p>This endpoint update a specific user.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>PUT https://api.integrity.st/1.0/user/&lt;userid&gt;</code></p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userid</td>
+<td>The userid of the user to update</td>
+</tr>
+</tbody></table>
+<h3 id='json-parameters-3'>JSON Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>specify new username for the user</td>
+</tr>
+<tr>
+<td>password</td>
+<td>specify a new password for the user</td>
+</tr>
+<tr>
+<td>enable</td>
+<td>specifiy 1 to enable and 0 to disable the user</td>
+</tr>
+</tbody></table>
+<h2 id='delete-a-specific-user'>Delete a Specific User</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">request</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">request</span><span class="p">(</span>
+    <span class="dl">'</span><span class="s1">https://api.5july.net/1.0/user/40</span><span class="dl">'</span><span class="p">,</span>
+        <span class="p">{</span> <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">delete</span><span class="dl">'</span><span class="p">,</span>
+                <span class="na">headers</span><span class="p">:</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">API-KEY</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">},</span>
+      <span class="p">},</span>  
+    <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">error</span> <span class="o">&amp;&amp;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span>  <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span> <span class="p">}</span>
+    <span class="p">}</span>   
+<span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">uri</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s1">'https://api.5july.net/1.0/user/21'</span><span class="p">)</span>
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">uri</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">uri</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="n">req</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Delete</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">uri</span><span class="p">.</span><span class="nf">path</span><span class="p">,</span> <span class="s1">'Accept'</span> <span class="o">=&gt;</span> <span class="s1">'application/json'</span><span class="p">)</span>
+<span class="n">req</span><span class="p">[</span><span class="s1">'API-KEY'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="s2">"</span><span class="si">#{</span><span class="n">res</span><span class="p">.</span><span class="nf">body</span><span class="si">}</span><span class="s2">"</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'user-agent'</span><span class="p">:</span> <span class="s">'python script'</span><span class="p">,</span>
+        <span class="s">'accept'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
+        <span class="s">'API-KEY'</span><span class="p">:</span> <span class="s">'ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'</span><span class="p">}</span>
+<span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s">"http://127.0.0.1:5000/1.0/user/username"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.integrity.st/1.0/user/&lt;userid&gt;"</span> <span class="se">\</span>
+  <span class="nt">-X</span> DELETE <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj"</span> <span class="se">\</span>
+  <span class="nt">-H</span>  <span class="s2">"accept: application/json"</span> 
+</code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$result</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://api.5july.net/1.0/user/25'</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="nb">stream_context_create</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+<span class="s1">'http'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'method'</span> <span class="o">=&gt;</span> <span class="s1">'DELETE'</span><span class="p">,</span>
+        <span class="s1">'ignore_errors'</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
+        <span class="s1">'header'</span> <span class="o">=&gt;</span>
+        <span class="s1">'API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'</span> <span class="o">.</span> <span class="s2">"</span><span class="se">\r\n</span><span class="s2">"</span>
+        <span class="o">.</span><span class="s1">'Accept: application/json'</span> <span class="o">.</span> <span class="s2">"</span><span class="se">\r\n</span><span class="s2">"</span>
+<span class="p">),</span>
+<span class="p">)));</span>
+
+<span class="nb">print_r</span><span class="p">(</span><span class="nb">json_decode</span><span class="p">(</span><span class="nv">$result</span><span class="p">))</span>
+
+<span class="cp">?&gt;</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint deletes a specific user.</p>
+<h3 id='http-request-6'>HTTP Request</h3>
+<p><code>DELETE https://api.integrity.st/1.0/user/&lt;userId&gt;</code></p>
+<h3 id='url-parameters-4'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userid</td>
+<td>The userid of the user to delete</td>
+</tr>
+</tbody></table>
+<h1 id='stats'>Stats</h1><h2 id='get-all-stats'>Get all stats</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">request</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">request</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span>
+    <span class="dl">'</span><span class="s1">https://api.5july.net/1.0/stats/all</span><span class="dl">'</span><span class="p">,</span>
+        <span class="p">{</span> <span class="na">headers</span><span class="p">:</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">API-KEY</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">},</span>
+      <span class="p">},</span>  
+    <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">error</span> <span class="o">&amp;&amp;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span>  <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span> <span class="p">}</span>
+    <span class="p">}</span>   
+<span class="p">);</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">uri</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s1">'https://api.5july.net/1.0/stats/all'</span><span class="p">)</span>
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">uri</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">uri</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="n">req</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">uri</span><span class="p">.</span><span class="nf">path</span><span class="p">,</span> <span class="s1">'Accept'</span> <span class="o">=&gt;</span> <span class="s1">'application/json'</span><span class="p">)</span>
+<span class="n">req</span><span class="p">[</span><span class="s1">'API-KEY'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="s2">"</span><span class="si">#{</span><span class="n">res</span><span class="p">.</span><span class="nf">body</span><span class="si">}</span><span class="s2">"</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'user-agent'</span><span class="p">:</span> <span class="s">'python script'</span><span class="p">,</span>
+        <span class="s">'accept'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
+        <span class="s">'API-KEY'</span><span class="p">:</span> <span class="s">'ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'</span><span class="p">}</span>
+<span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://api.5july.net/1.0/Stats/all"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.5july.net/1.0/stats/all"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj"</span> <span class="se">\</span>
+  <span class="nt">-H</span>  <span class="s2">"accept: application/json"</span>
+</code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$result</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://api.5july.net/1.0/stats/all'</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="nb">stream_context_create</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+<span class="s1">'http'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'method'</span> <span class="o">=&gt;</span> <span class="s1">'GET'</span><span class="p">,</span>
+        <span class="s1">'ignore_errors'</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
+        <span class="s1">'header'</span> <span class="o">=&gt;</span>  
+        <span class="s1">'API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'</span> <span class="o">.</span> <span class="s2">"</span><span class="se">\r\n</span><span class="s2">"</span>
+        <span class="o">.</span><span class="s1">'Accept: application/json'</span> <span class="o">.</span> <span class="s2">"</span><span class="se">\r\n</span><span class="s2">"</span>
+<span class="p">),</span>
+<span class="p">)));</span>
+
+<span class="nb">print_r</span><span class="p">(</span><span class="nb">json_decode</span><span class="p">(</span><span class="nv">$result</span><span class="p">))</span>
+
+<span class="cp">?&gt;</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"tdata"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"current_online"</span><span class="p">:</span><span class="w"> </span><span class="mi">78</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"premium_online"</span><span class="p">:</span><span class="w"> </span><span class="mi">71</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lex_online"</span><span class="p">:</span><span class="w"> </span><span class="mi">327</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"total_user"</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"total_lexuser"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"total_premium"</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"total_deleted"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"today_signups"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"week_signup"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"avg_user"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"total_enable"</span><span class="p">:</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"total_disable"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"users"</span><span class="p">:</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"users_lex"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"users_premium"</span><span class="p">:</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"deluser"</span><span class="p">:</span><span class="w"> </span><span class="mi">9999</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"total_enable"</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"total_disable"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"month"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-October"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"users"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"users_lex"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"users_premium"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"deluser"</span><span class="p">:</span><span class="w"> </span><span class="mi">9999</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"total_enable"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"total_disable"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"month"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-September"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<p>This endpoint display stats for your API account</p>
+<h3 id='http-request-7'>HTTP Request</h3>
+<p><code>GET https://api.5july.net/1.0/stats/&lt;option&gt;</code></p>
+<h3 id='url-parameters-5'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>option</td>
+<td>all = fetch everything</td>
+</tr>
+</tbody></table>
+<h1 id='openvpn'>OpenVPN</h1><h1 id='wireguard'>Wireguard</h1><h2 id='add-key'>Add key</h2>
+<p>Push an wireguard public key to the server (This should be your public key).
+Basically you want to run this on the client side. either in a bashscript. you can see example here: https://wg.beta.5july.net/dl/integrity-wg.sh</p>
+
+<blockquote>
+<p>To add key, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">request</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">request</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span>
+    <span class="dl">'</span><span class="s1">https://api.5july.net/1.0/wireguard</span><span class="dl">'</span><span class="p">,</span>
+        <span class="p">{</span> <span class="na">headers</span><span class="p">:</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">API-KEY</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">},</span>
+     <span class="na">json</span><span class="p">:</span> <span class="p">{</span> <span class="na">username</span><span class="p">:</span> <span class="dl">'</span><span class="s1">test</span><span class="dl">'</span><span class="p">,</span> <span class="na">password</span><span class="p">:</span> <span class="dl">'</span><span class="s1">testing123</span><span class="dl">'</span><span class="p">,</span> <span class="na">pubkey</span><span class="p">:</span> <span class="dl">"</span><span class="s2">qPTi/SUqY36cEimdbRraqp4PJcrLIPiKtovaEUPPEFY=</span><span class="dl">"</span> <span class="p">}</span> <span class="p">},</span>
+    <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">error</span> <span class="o">&amp;&amp;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span>  <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span> <span class="p">}</span>
+    <span class="p">}</span>   
+<span class="p">);</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'net/http'</span>
+<span class="nb">require</span> <span class="s1">'json'</span>
+
+<span class="n">uri</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s1">'https://api.5july.net/1.0/wireguard'</span><span class="p">)</span>
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">uri</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">uri</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="n">req</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Post</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">uri</span><span class="p">.</span><span class="nf">path</span><span class="p">,</span> <span class="s1">'Content-Type'</span> <span class="o">=&gt;</span> <span class="s1">'application/json'</span><span class="p">)</span>
+<span class="n">req</span><span class="p">[</span><span class="s1">'API-KEY'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'</span>
+<span class="n">req</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="p">{</span><span class="ss">username: </span><span class="s1">'test'</span><span class="p">,</span> <span class="ss">password: </span><span class="s1">'testing123'</span><span class="p">,</span> <span class="ss">pubkey: </span><span class="s1">'qPTi/SUqY36cEimdbRraqp4PJcrLIPiKtovaEUPPEFY='</span><span class="p">}.</span><span class="nf">to_json</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="s2">"</span><span class="si">#{</span><span class="n">res</span><span class="p">.</span><span class="nf">body</span><span class="si">}</span><span class="s2">"</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'user-agent'</span><span class="p">:</span> <span class="s">'python script'</span><span class="p">,</span>
+        <span class="s">'Content-type'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
+        <span class="s">'API-KEY'</span><span class="p">:</span> <span class="s">'ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'</span><span class="p">}</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'username'</span><span class="p">:</span> <span class="s">'demodemo'</span><span class="p">,</span> <span class="s">'password'</span><span class="p">:</span> <span class="s">'abc1234'</span><span class="p">,</span> <span class="s">'pubkey'</span><span class="p">:</span> <span class="s">'qPTi/SUqY36cEimdbRraqp4PJcrLIPiKtovaEUPPEFY='</span><span class="p">}</span>
+<span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"https://api.5july.net/1.0/wireguard"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
+curl <span class="s2">"https://api.5july.net/1.0/wireguard"</span> <span class="se">\</span>
+  <span class="nt">-X</span> POST <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{"username": "demodemo", "password": "abc1234", "pubkey": "qPTi/SUqY36cEimdbRraqp4PJcrLIPiKtovaEUPPEFY="}'</span>
+</code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$data_string</span> <span class="o">=</span> <span class="nb">json_encode</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s2">"username"</span> <span class="o">=&gt;</span> <span class="s2">"test"</span><span class="p">,</span> <span class="s2">"password"</span> <span class="o">=&gt;</span> <span class="s2">"testing123"</span><span class="p">,</span> <span class="s2">"pubkey"</span> <span class="o">=&gt;</span> <span class="s2">"qPTi/SUqY36cEimdbRraqp4PJcrLIPiKtovaEUPPEFY="</span><span class="p">));</span>
+
+<span class="nv">$result</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://api.5july.net/1.0/wireguard'</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="nb">stream_context_create</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+<span class="s1">'http'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'method'</span> <span class="o">=&gt;</span> <span class="s1">'POST'</span><span class="p">,</span>
+        <span class="s1">'ignore_errors'</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
+        <span class="s1">'header'</span> <span class="o">=&gt;</span>
+        <span class="s1">'API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'</span> <span class="o">.</span> <span class="s2">"</span><span class="se">\r\n</span><span class="s2">"</span>
+        <span class="o">.</span><span class="s1">'Content-Type: application/json'</span> <span class="o">.</span> <span class="s2">"</span><span class="se">\r\n</span><span class="s2">"</span>
+        <span class="o">.</span><span class="s1">'Content-Length: '</span> <span class="o">.</span> <span class="nb">strlen</span><span class="p">(</span><span class="nv">$data_string</span><span class="p">)</span> <span class="o">.</span> <span class="s2">"</span><span class="se">\r\n</span><span class="s2">"</span><span class="p">,</span>
+        <span class="s1">'content'</span> <span class="o">=&gt;</span> <span class="nv">$data_string</span><span class="p">,</span>
+<span class="p">),</span>
+<span class="p">)));</span>
+<span class="nb">print_r</span><span class="p">(</span><span class="nb">json_decode</span><span class="p">(</span><span class="nv">$result</span><span class="p">))</span>
+<span class="cp">?&gt;</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w"> 
+  </span><span class="nl">"dns"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.1.1.1"</span><span class="p">,</span><span class="w"> 
+  </span><span class="nl">"ipv4"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.0.0.4/24"</span><span class="p">,</span><span class="w"> 
+  </span><span class="nl">"ipv6"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdab:1337:1337:1::4/64"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div><h3 id='http-request-8'>HTTP Request</h3>
+<p><code>POST https://api.5july.net/1.0/wireguard</code></p>
+<h2 id='list-keys'>List keys</h2>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"ipv4"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.0.0.25/32"</span><span class="p">,</span><span class="w"> 
+    </span><span class="nl">"ipv6"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdab:1337:1337:1::25/128"</span><span class="p">,</span><span class="w"> 
+    </span><span class="nl">"public_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"qDpB/McJDkL9YuNINuuvupB1tADJrva/g/phwfQrWBw="</span><span class="w">
+  </span><span class="p">},</span><span class="w"> 
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"ipv4"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.0.0.28/32"</span><span class="p">,</span><span class="w"> 
+    </span><span class="nl">"ipv6"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdab:1337:1337:1::28/128"</span><span class="p">,</span><span class="w"> 
+    </span><span class="nl">"public_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SN5qj4uyO9JUcqLhmevSTfxm3ATwud3TDi8xG5pjEwE="</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h3 id='http-request-9'>HTTP Request</h3>
+<p><code>GET https://api.5july.net/1.0/wireguard</code></p>
+<h2 id='delete-key'>Delete key</h2>
+<p>This command is used to delete an public key from the servers</p>
+<h3 id='http-request-10'>HTTP Request</h3>
+<p><code>DELETE https://api.5july.net/1.0/wireguard/&lt;id&gt;</code></p>
+<h1 id='ip-check'>IP Check</h1><h2 id='ipcheck'>ipcheck</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">request</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">request</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span>
+    <span class="dl">'</span><span class="s1">https://api.5july.net/1.0/ipcheck</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">},</span>
+      <span class="p">},</span>  
+    <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">error</span> <span class="o">&amp;&amp;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span>  <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span> <span class="p">}</span>
+    <span class="p">}</span>   
+<span class="p">);</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">uri</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s1">'https://api.5july.net/1.0/ipcheck'</span><span class="p">)</span>
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">uri</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">uri</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="n">req</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">uri</span><span class="p">.</span><span class="nf">path</span><span class="p">,</span> <span class="s1">'Accept'</span> <span class="o">=&gt;</span> <span class="s1">'application/json'</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="s2">"</span><span class="si">#{</span><span class="n">res</span><span class="p">.</span><span class="nf">body</span><span class="si">}</span><span class="s2">"</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'user-agent'</span><span class="p">:</span> <span class="s">'python script'</span><span class="p">,</span>
+        <span class="s">'accept'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">}</span>
+<span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://api.5july.net/1.0/ipcheck"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.5july.net/1.0/ipcheck"</span> <span class="se">\</span>
+  <span class="nt">-H</span>  <span class="s2">"accept: application/json"</span>
+</code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$result</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://api.5july.net/1.0/ipcheck'</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="nb">stream_context_create</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+<span class="s1">'http'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'method'</span> <span class="o">=&gt;</span> <span class="s1">'GET'</span><span class="p">,</span>
+        <span class="s1">'ignore_errors'</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
+        <span class="s1">'header'</span> <span class="o">=&gt;</span>
+        <span class="s1">'Accept: application/json'</span> <span class="o">.</span> <span class="s2">"</span><span class="se">\r\n</span><span class="s2">"</span>
+<span class="p">),</span>
+<span class="p">)));</span>
+
+<span class="nb">print_r</span><span class="p">(</span><span class="nb">json_decode</span><span class="p">(</span><span class="nv">$result</span><span class="p">))</span>
+
+<span class="cp">?&gt;</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"127.0.0.1"</span><span class="p">,</span><span class="w"> 
+</span><span class="nl">"connected"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div><h3 id='http-request-11'>HTTP Request</h3>
+<p><code>GET https://api.5july.net/1.0/ipcheck</code></p>
+<h1 id='locations'>Locations</h1><h2 id='locations-2'>locations</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">request</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">request</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span>
+    <span class="dl">'</span><span class="s1">https://api.5july.net/1.0/locations</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">},</span>
+      <span class="p">},</span>  
+    <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">error</span> <span class="o">&amp;&amp;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span>  <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span> <span class="p">}</span>
+    <span class="p">}</span>   
+<span class="p">);</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">uri</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s1">'https://api.5july.net/1.0/locations'</span><span class="p">)</span>
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">uri</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">uri</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="n">req</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">uri</span><span class="p">.</span><span class="nf">path</span><span class="p">,</span> <span class="s1">'Accept'</span> <span class="o">=&gt;</span> <span class="s1">'application/json'</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="s2">"</span><span class="si">#{</span><span class="n">res</span><span class="p">.</span><span class="nf">body</span><span class="si">}</span><span class="s2">"</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'user-agent'</span><span class="p">:</span> <span class="s">'python script'</span><span class="p">,</span>
+        <span class="s">'accept'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">}</span>
+<span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://api.5july.net/1.0/locations"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.5july.net/1.0/locations"</span> <span class="se">\</span>
+  <span class="nt">-H</span>  <span class="s2">"accept: application/json"</span>
+</code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$result</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://api.5july.net/1.0/locations'</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="nb">stream_context_create</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+<span class="s1">'http'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'method'</span> <span class="o">=&gt;</span> <span class="s1">'GET'</span><span class="p">,</span>
+        <span class="s1">'ignore_errors'</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
+        <span class="s1">'header'</span> <span class="o">=&gt;</span>
+        <span class="s1">'Accept: application/json'</span> <span class="o">.</span> <span class="s2">"</span><span class="se">\r\n</span><span class="s2">"</span>
+<span class="p">),</span>
+<span class="p">)));</span>
+
+<span class="nb">print_r</span><span class="p">(</span><span class="nb">json_decode</span><span class="p">(</span><span class="nv">$result</span><span class="p">))</span>
+
+<span class="cp">?&gt;</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Malmo"</span><span class="p">,</span><span class="w"> 
+    </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sweden"</span><span class="p">,</span><span class="w"> 
+    </span><span class="nl">"dest_addr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"155.4.89.133"</span><span class="p">,</span><span class="w"> 
+    </span><span class="nl">"hostname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"seML"</span><span class="p">,</span><span class="w"> 
+    </span><span class="nl">"port"</span><span class="p">:</span><span class="w"> </span><span class="mi">48574</span><span class="p">,</span><span class="w"> 
+    </span><span class="nl">"public_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ipW9/ysMc9vQbg/x7WK/udnl06+NJioWZZ4XIqz4PQY="</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+
+</span></code></pre></div><h3 id='http-request-12'>HTTP Request</h3>
+<p><code>GET https://api.5july.net/1.0/locations</code></p>
+<h1 id='errors'>Errors</h1>
+<aside class="notice">
+Integrity API uses standard HTTP status code when returning errors. Additionally, we provide details about errors in the body of the response in the following format
+</aside>
+
+<pre class="center-column">
+{
+  "error": {
+    "error_code": %Errorcode%, 
+    "error_name": "%errorName%", 
+    "http_code": %httperrorcode%, 
+    "innerError": {
+      %additional json data about the error%
+    }, 
+    "message": "%description of the error%"
+  }
+}
+
+</pre>
+
+<p>The integrity.st API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request -- Your request is invalid.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized -- Your API key is wrong.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden -- Forbidden request</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found -- The specified API request could not be found.</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed -- You tried to access a method with an invalid method.</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
+</tr>
+<tr>
+<td>410</td>
+<td>Gone -- The url requested has been removed from our servers.</td>
+</tr>
+<tr>
+<td>418</td>
+<td>I&#39;m a teapot.</td>
+</tr>
+<tr>
+<td>422</td>
+<td>Unprocessable Entity -- Unable to process the contained instructions</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests -- The user has sent too many requests in a given amount of time</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">cURL</a>
+                <a href="#" data-language-name="python">Python</a>
+                <a href="#" data-language-name="ruby">Ruby</a>
+                <a href="#" data-language-name="javascript">Nodejs</a>
+                <a href="#" data-language-name="php">PHP</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
