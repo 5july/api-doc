@@ -730,7 +730,7 @@ https://api.5july.net/1.0/user?sort=userid&order=desc&page=1&search=abc123
 </span></code></pre></div>
 <p>This endpoint create a new user</p>
 <h3 id='http-request-4'>HTTP Request</h3>
-<p><code>POST https://api.integrity.st/1.0/user</code></p>
+<p><code>POST https://api.5july.net/1.0/user</code></p>
 <h3 id='json-parameters-2'>json Parameters</h3>
 <table><thead>
 <tr>
@@ -781,7 +781,7 @@ an empty json payload will autogenerate a password for you.
         <span class="s">'API-KEY'</span><span class="p">:</span> <span class="s">'ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj'</span><span class="p">}</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s">'username'</span><span class="p">:</span> <span class="s">'Johnny2'</span><span class="p">,</span> <span class="s">'password'</span> <span class="p">:</span> <span class="s">'abc1234'</span><span class="p">,</span> <span class="s">'enable'</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
 <span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s">"https://api.5july.net/user/&lt;userid&gt;"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.integrity.st/1.0/user/&lt;userid&gt;"</span> <span class="se">\</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.5july.net/1.0/user/&lt;userid&gt;"</span> <span class="se">\</span>
   <span class="nt">-X</span> PUT <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj"</span> <span class="se">\</span>
   <span class="nt">-H</span>  <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
@@ -814,7 +814,7 @@ an empty json payload will autogenerate a password for you.
 </span></code></pre></div>
 <p>This endpoint update a specific user.</p>
 <h3 id='http-request-5'>HTTP Request</h3>
-<p><code>PUT https://api.integrity.st/1.0/user/&lt;userid&gt;</code></p>
+<p><code>PUT https://api.5july.net/1.0/user/&lt;userid&gt;</code></p>
 <h3 id='url-parameters-3'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -879,7 +879,7 @@ an empty json payload will autogenerate a password for you.
 <span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s">"http://127.0.0.1:5000/1.0/user/username"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.integrity.st/1.0/user/&lt;userid&gt;"</span> <span class="se">\</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.5july.net/1.0/user/&lt;userid&gt;"</span> <span class="se">\</span>
   <span class="nt">-X</span> DELETE <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj"</span> <span class="se">\</span>
   <span class="nt">-H</span>  <span class="s2">"accept: application/json"</span> 
@@ -907,7 +907,7 @@ an empty json payload will autogenerate a password for you.
 </span></code></pre></div>
 <p>This endpoint deletes a specific user.</p>
 <h3 id='http-request-6'>HTTP Request</h3>
-<p><code>DELETE https://api.integrity.st/1.0/user/&lt;userId&gt;</code></p>
+<p><code>DELETE https://api.5july.net/1.0/user/&lt;userId&gt;</code></p>
 <h3 id='url-parameters-4'>URL Parameters</h3>
 <table><thead>
 <tr>
