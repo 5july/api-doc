@@ -450,7 +450,7 @@ This endpoint create a new user
 
 ### HTTP Request
 
-`POST https://api.integrity.st/1.0/user`
+`POST https://api.5july.net/1.0/user`
 
 ### json Parameters
 
@@ -507,7 +507,7 @@ req = requests.put("https://api.5july.net/user/<userid>", headers=headers, json=
 ```
 
 ```shell
-curl "https://api.integrity.st/1.0/user/<userid>" \
+curl "https://api.5july.net/1.0/user/<userid>" \
   -X PUT \
   -H "API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj" \
   -H  "Content-Type: application/json" \
@@ -547,7 +547,7 @@ This endpoint update a specific user.
 
 ### HTTP Request
 
-`PUT https://api.integrity.st/1.0/user/<userid>`
+`PUT https://api.5july.net/1.0/user/<userid>`
 
 ### URL Parameters
 
@@ -611,7 +611,7 @@ print(req.json())
 ```
 
 ```shell
-curl "https://api.integrity.st/1.0/user/<userid>" \
+curl "https://api.5july.net/1.0/user/<userid>" \
   -X DELETE \
   -H "API-KEY: ibpebspx0ihcgwvbgms27q-89xk5hkelc63db71vpwbcy70jlwi.61s0jvh1j.lj" \
   -H  "accept: application/json" 
@@ -646,7 +646,7 @@ This endpoint deletes a specific user.
 
 ### HTTP Request
 
-`DELETE https://api.integrity.st/1.0/user/<userId>`
+`DELETE https://api.5july.net/1.0/user/<userId>`
 
 ### URL Parameters
 
