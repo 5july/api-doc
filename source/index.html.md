@@ -24,13 +24,6 @@ Welcome to the Integrity.st API! You can use our API to access VPN API endpoints
 
 We have language bindings in Shell, Python, Ruby, Nodejs, and PHP! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
-<<<<<<< HEAD
-# Authentication & Headers
-With each API call, you will need to setup http request headers to authenticate.
-=======
-This example API documentation page was created with [Slate](https://github.com/slatedocs/slate). Feel free to edit it and use it as a base for your own API's documentation.
->>>>>>> 215e6ee1a630039da8b53b1546e624c388a0f39e
-
 ### HTTP HEADERS
 
 Parameter | Description | Required
